@@ -3,7 +3,7 @@ import Login from './Login'
 import HeaderComponent from './HeaderComponent'
 import FooterComponent from './FooterComponent'
 
-function HomepageComponent() {
+function Homepage() {
 
   return (
     <div>
@@ -20,4 +20,4 @@ function HomepageComponent() {
   );
 }
 
-export default HomepageComponent;
+export default Homepage;
