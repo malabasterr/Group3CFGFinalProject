@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; //Bootstrap import
 import { Route, Routes } from 'react-router-dom';
@@ -16,7 +16,7 @@ function App() {
       
       <Routes>
         {/* <Route path="/" element={<Homepage />} /> */}
-        <Route path="/Homepage" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         {/* Routes to other pages will go here */}
@@ -27,4 +27,4 @@ function App() {
   );
 };
 
-export default App
+export default App;
