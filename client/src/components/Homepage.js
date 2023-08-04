@@ -1,19 +1,23 @@
-// React is made up of lots of 'components'.
-// These components can be specific functions to then be called on in the code
-// Or in this case, this component 'Homepage' is the page that displays when the user is at the root URL. 
-// A component/page will be structured like this: 
+import React, { useState } from 'react';
+import Login from './Login'
+import HeaderComponent from './HeaderComponent'
+import FooterComponent from './FooterComponent'
 
-// import statements go at the top here
+function HomepageComponent() {
 
-// function Homepage() {
+  return (
+    <div>
+        <h1>It's Not you It's Me!</h1>
+        <Login></Login>
 
-//     any functions to be used within the page are defined here
+        <div>
+            <h2>How To Play</h2>
+        
+            
+        </div>
 
-// return (
+    </div>
+  );
+}
 
-//     The actual code to be displayed goes here- written like HTMLAllCollection
-
-// )
-// };
-
-// export default Homepage;
+export default HomepageComponent;
