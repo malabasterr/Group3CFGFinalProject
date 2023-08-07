@@ -1,0 +1,12 @@
+/* styles.css or YourComponent.css */
+
+  
+  h1 {
+    color: #bbc6ff;
+    -webkit-text-stroke: 3px black;
+
+    font-family: 'Trebuchet MS', sans-serif ;
+    text-align: center;
+    font-size: 100px;
+}   
+
