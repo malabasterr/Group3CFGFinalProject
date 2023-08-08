@@ -10,9 +10,9 @@ function HeaderComponent() {
           </Col>
           <Col xs={4} md={8}>
             <Nav className="justify-content-end">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="Login.js">Login</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/signup">SIGN-UP</Nav.Link>
             </Nav>
           </Col>
         </Row>

@@ -8,6 +8,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
+import ProcessBoxesComponent from './components/ProcessBoxesComponent';
 
 
 function App() {
@@ -29,3 +30,4 @@ function App() {
 };
 
 export default App;
+
