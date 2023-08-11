@@ -14,17 +14,31 @@ function SignUp() {
   const signUp = () => {};
 
   return (
-    <div>
-      <label>Sign Up</label>
-      <input
-        placeholder="Username"
-        onChange={handleUsernameChange}
-      />
-      <input
-        placeholder="Password"
-        onChange={handlePasswordChange}
-      />
-      <button onClick={signUp}>Sign Up</button>
+    <div className='d-flex justify-content-center align-items-start'>
+      <div className='signupBorder mt-3'>
+        <div className="text-center">
+              <label>Sign Up</label>
+        </div>
+
+        <div className="mb-3">
+              <input className="form-control"
+                placeholder="First Name"
+                onChange={handleUsernameChange}
+              />
+        </div>
+
+        <div>
+          <input className="form-control"
+            placeholder="Password"
+            onChange={handlePasswordChange}
+          />
+          
+        <div className="text-center">
+          <button className="mainbutton" onClick={signUp}>Sign Up</button>
+        </div>
+        
+        </div>
+      </div>
     </div>
   );
 }

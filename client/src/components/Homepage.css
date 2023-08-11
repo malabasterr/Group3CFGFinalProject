@@ -20,4 +20,37 @@
     padding: 1cm;
 }
 
+.introBox {
+    background-color: lightgrey;
+    padding: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+.dragonPic {
+    width: 100%;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+
+.background1 {
+
+    background-image: url('');
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10%;
+    border: 4px solid lightslategray;
+
+}
+
+.paragraph {
+    
+    text-align: center;
+    
+}
+
 
