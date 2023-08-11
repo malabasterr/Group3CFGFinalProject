@@ -8,11 +8,15 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
+import QuizSlider from './components/QuizSlider';
+import './components/QuizSlider.css'
+
 
 function App() {
   return (
     <main>
       <HeaderComponent />
+
       
       <Routes>
         {/* <Route path="/" element={<Homepage />} /> */}
@@ -22,7 +26,10 @@ function App() {
         {/* Routes to other pages will go here */}
         <Route path="*" element={<Error />} />
       </Routes>
+      
       <FooterComponent />
+     
+      <QuizSlider />
     </main>
   );
 };
