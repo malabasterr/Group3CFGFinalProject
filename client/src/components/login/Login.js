@@ -15,8 +15,9 @@ function Login() {
 
   const login = () => {};
   return (
+    <div>
     <div className="d-flex justify-content-center align-items-start">
-      <div className="signupBorder mt-3">
+      <div className="signupBorder mt-3" >
         <div className="text-center">
           <label className='LoginTitle'>Log in to Play!</label>
         </div>
@@ -46,6 +47,7 @@ function Login() {
           <button className="underButton" onClick={login}>Create Account</button>
         </div>
       </div>
+    </div>
     </div>
   );
   

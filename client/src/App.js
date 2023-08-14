@@ -4,11 +4,11 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import Error from './components/Error';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
-import HeaderComponent from './components/HeaderComponent';
-import FooterComponent from './components/FooterComponent';
-import ProcessBoxesComponent from './components/ProcessBoxesComponent';
+import HeaderComponent from './components/header/HeaderComponent';
+import FooterComponent from './components/footer/FooterComponent';
+import ProcessBoxesComponent from './components/displayboxes/displayBoxes';
+import LoginSignup from './components/SigninLoginPage.js';
+
 
 
 function App() {
@@ -19,13 +19,13 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<Homepage />} /> */}
         <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/SigninLoginPage.js" element={<LoginSignup />} />
         {/* Routes to other pages will go here */}
         <Route path="*" element={<Error />} />
       </Routes>
       <FooterComponent />
     </main>
+
   );
 };
 

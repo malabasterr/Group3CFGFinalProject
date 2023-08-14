@@ -2,12 +2,14 @@
     border: 3px rgb(0, 0, 0) solid;
     padding: 20px;
     border-radius: 30px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
 }
 
 .underButton{
  border-style: none;
- background-color: white;
  padding: 20px;
+ font-family: 'Open Sans', sans-serif;
 }
 
 .mainbutton {
@@ -16,4 +18,8 @@
     padding: 10px;
     margin-top: 10px;
     width: 80%;
+    font-family: 'Open Sans', sans-serif;
+}
+.loginBox{
+    background-color: white;
 }

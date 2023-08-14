@@ -1,0 +1,37 @@
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f5ff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .social-media-icons a {
+    color: #333;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .social-media-icons i {
+    transition: color 0.3s;
+  }
+  
+  .social-media-icons i:hover {
+    color: #ffc100 ;
+  }
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* This ensures that the container takes up at least the full viewport height */
+  }

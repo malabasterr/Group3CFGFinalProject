@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SignUp.css';
 
 function SignUp() {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -17,7 +18,12 @@ function SignUp() {
     <div className='d-flex justify-content-center align-items-start'>
       <div className='signupBorder mt-3'>
         <div className="text-center">
-              <label>Sign Up</label>
+              <div>
+                <label>Don't have an account?</label>
+              </div>
+              <div>
+                <label>Sign Up</label>
+              </div>
         </div>
 
         <div className="mb-3">
@@ -34,7 +40,7 @@ function SignUp() {
           />
           
         <div className="text-center">
-          <button className="mainbutton" onClick={signUp}>Sign Up</button>
+          <button className="signup-mainbutton" onClick={signUp}>Sign Up</button>
         </div>
         
         </div>
