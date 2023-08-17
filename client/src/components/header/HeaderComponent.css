@@ -1,0 +1,20 @@
+.navButton {
+    border: 2px solid black ;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.signupButton {
+    background-color: #ffc100;
+    border: 2px solid black ;
+    border-radius: 20px;
+}
+
+.background {
+    background-color: #f8f5ff;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+.social-media-icons  {
+    color: #ffc100 ;
+  }
