@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function ProcessBoxesComponent() {
+function devPictures() {
     return (
       <div className="container">
         <div className="row">
@@ -42,5 +42,5 @@ function ProcessBoxesComponent() {
     );
   }
   
-  export default ProcessBoxesComponent;
+  export default devPictures;
  

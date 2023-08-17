@@ -13,24 +13,24 @@ function ProcessBoxesComponent() {
           <div className="col-md-4">
             <div className='howto'>
             <img src={loginImage} alt="Login" className='dragonPic'/>
-              <h6>1. Login</h6>
-              <p>Login to your personal account.</p>
+              <h6 className='boxText'>1. Login</h6>
+              <p className='boxText'>Login to your personal account.</p>
             </div>
           </div>
   
           <div className="col-md-4">
             <div className='howto'>
             <img src={greenDragon} alt="greenDragon" className='dragonPic'/>
-              <h6>2. Find a friend</h6>
-              <p>Link accounts to play against your friends.</p>
+              <h6 className='boxText'>2. Find a friend</h6>
+              <p className='boxText'>Link accounts to play against your friends.</p>
             </div>
           </div>
   
           <div className="col-md-4">
             <div className='howto'>
             <img src={dragonLogo} alt="Logodrag" className='dragonPic'/>
-              <h6>3. Quiz</h6>
-              <p>Play and find out how well you know eachother.</p>
+              <h6 className='boxText'>3. Quiz</h6>
+              <p className='boxText'>Play and find out how well you know eachother.</p>
             </div>
           </div>
         </div>
