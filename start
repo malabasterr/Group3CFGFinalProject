@@ -1,0 +1,11 @@
+Script started on Mon Aug 14 10:04:04 2023
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ npm run
+[0m[1mLifecycle scripts[22m[0m included in [32mleri@1.0.0[39m:
+  test
+    [2mecho "Error: no test specified" && exit 1[22m
+
+bash-3.2$ 

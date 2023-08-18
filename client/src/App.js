@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; //Bootstrap import
+import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import Error from './components/Error';
@@ -21,8 +21,10 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<Homepage />} /> */}
         <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/SigninLoginPage.js" element={<LoginSignup />} />
+        {/* This is not a real path, I am using it to test my features */}
+        <Route path="/RoomHome" element={<RoomHome />} />
+        <Route path="/room/:id" element={<Room />} />
         {/* Routes to other pages will go here */}
         <Route path="*" element={<Error />} />
       </Routes>
@@ -31,7 +33,9 @@ function App() {
      
       <QuizSlider />
     </main>
+
   );
 };
 
 export default App;
+

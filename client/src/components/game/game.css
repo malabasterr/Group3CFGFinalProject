@@ -1,0 +1,140 @@
+/* Styles for Room component */
+
+.roomContainer {
+  background-color: rgb(187, 198, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.match {
+  position: absolute;
+  margin: auto;
+  width: 50%;
+}
+
+.noMatch {
+  position: absolute;
+  margin: auto;
+  width: 50%;
+}
+  
+.starContainer {
+  position: absolute;
+  top: 15%;
+  left: 3%;
+  width: 50%;
+}
+  
+.star {
+  filter: invert(1);
+  width: 10%;
+}
+  
+.activeStar {
+  filter: invert(0.2) sepia(100%) saturate(10) hue-rotate(200deg) !important;
+  width: 10%;
+}
+
+.greenDragon {
+  width: 20%;
+}
+
+.purpleDragon {
+  width: 20%;
+}
+
+/* Styles for Button component */
+
+.startButton {
+  background-color: gray;
+	border: 3px solid black;
+  cursor: pointer;
+}
+
+.startButton:hover {
+  background-color: white;
+	border: 3px solid black;
+  cursor: pointer;
+}
+
+/* Styles for Controls component  */
+
+.controlsContainer {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+  margin-top: 5%;
+}
+
+.optionButton {
+	width: 30%;
+	border: 3px solid black;
+	border-radius: 10px;
+	background-color:rgba(254, 194, 0, 1);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+  padding: 2%;
+  margin: 9%;
+  flex-direction: column;
+}
+
+.optionButton:hover {
+	scale: 1.2;
+}
+
+.optionButtonActive {
+  scale: 1.2;
+	width: 30%;
+	border: 3px solid white;
+	border-radius: 10px;
+	background-color:rgba(37, 111, 198, 1);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+  padding: 2%;
+  margin: 9%;
+  flex-direction: column;
+}
+
+.optionButtonImg {
+	width: 100%;
+	margin: auto;
+  margin: 5%;
+}
+
+.playerName {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+  margin-top: 8%;
+}
+
+/* Styles for Waiting for Connection component */
+
+.playerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.opponentContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+  
+.connectionText {
+  font-size: 18px;
+  color: white;
+  margin: 8px 0;
+  padding: 50%;
+}
