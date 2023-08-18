@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { SocketContextProvider } from './components/game/SocketContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Router>
     <React.StrictMode>
-      <App />
+      <SocketContextProvider>
+        <App />
+      </SocketContextProvider>
     </React.StrictMode>
   </Router>,
 );
