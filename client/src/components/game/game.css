@@ -33,6 +33,7 @@
   
 .activeStar {
   filter: invert(0.2) sepia(100%) saturate(10) hue-rotate(200deg) !important;
+  width: 10%;
 }
 
 .greenDragon {
