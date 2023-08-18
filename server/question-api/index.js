@@ -9,12 +9,19 @@ THE LOGIC
 - Each time a new game is started there is a function that shuffles the array.
 - The first 10 questions in the array will appear in the game.
 - This stops repeated questions in the same game. 
+- The API must send a set of questions instead of a singular question otherwise the QuizSlider can't loop through the array.
 
 */
 
+
+
 const express = require('express');
 const app = express();
-const port = 3000;
+const cors = require('cors');
+const port = 3001;
+
+//Included cors so my API could communicate with my react component. 
+app.use(cors());
 
 //Array of questions
 const questions = [
@@ -62,36 +69,28 @@ const questions = [
 
 ];
 
-//Function that shuffles the questions array using the 'Fisher-Yates shuffle algorithm' to avoid repeated questions.
+// Defining the index and the max amount of questions. 
+let lastQuestionIndex = 0;
+const maxQuestions = 10;
 
+// Function that shuffles the questions array using the Fisher-Yates shuffle algorithm
 function shuffleArray(array) {
-
-   for(let i = array.length -1; i > 0; i--) {
+  for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
-
-   }
+  }
 }
 
-shuffleArray(questions);
-let lastQuestionIndex = 0;
-
-//Now that the questions have been shuffled the game will select the first 10 questions in the array.
-//After 10 questions have been shown. It will display game over.
+// API route to get a set of shuffled questions
 app.get('/api/questions/random', (req, res) => {
-  if (lastQuestionIndex >= 10) {
-    res.json({ text: 'Game has finished' });
-    return;
-  }
-
-//This is the range (0 - 10) for the amount of questions we want to show per game.
-  const randomQuestion = questions[lastQuestionIndex];
-  lastQuestionIndex++;
-  res.json(randomQuestion);
-  
+  shuffleArray(questions);
+//This is selecting the first 10 Questions in the shuffled array.
+  const questionSet = questions.slice(lastQuestionIndex, maxQuestions);
+//This is the format passed to the QuizSlider component
+  res.json({ questions: questionSet });
 });
 
-//This is to signal that the application is listening and ready to go.
+// Signal that the application is listening and ready to go
 app.listen(port, () => {
-    console.log(`Server is listening at http://localhost: ${port}`);
+  console.log(`Server is listening at http://localhost:${port}`);
 });

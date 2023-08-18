@@ -4,19 +4,19 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import Error from './components/Error';
-import HeaderComponent from './components/header/HeaderComponent';
-import FooterComponent from './components/footer/FooterComponent';
-import ProcessBoxesComponent from './components/displayboxes/displayBoxes';
-import LoginSignup from './components/SigninLoginPage.js';
-import Room from './components/game/Room';
-import RoomHome from './components/game/RoomHome';
-
+import Login from './components/Login';
+import SignUp from './components/SignUp';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
+import QuizSlider from './components/QuizSlider';
+import './components/QuizSlider.css'
 
 
 function App() {
   return (
     <main>
       <HeaderComponent />
+
       
       <Routes>
         {/* <Route path="/" element={<Homepage />} /> */}
@@ -28,7 +28,10 @@ function App() {
         {/* Routes to other pages will go here */}
         <Route path="*" element={<Error />} />
       </Routes>
+      
       <FooterComponent />
+     
+      <QuizSlider />
     </main>
 
   );
