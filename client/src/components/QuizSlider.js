@@ -5,13 +5,15 @@ This file contains the Quiz Slider component. It uses the library Swiper to crea
 The Quiz Slider function calls upon the question-api to render the set of questions for the game. 
 Each question is display in a slide. 
 
+This file also contains the next question button that triggers the slider to move to the next question.
+
 
 */
 
 
 
 //Imports for react and API
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 //Imports for slider 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,13 +24,23 @@ import { EffectCoverflow} from 'swiper/modules';
 
 //Quiz Slider component.
 function QuizSlider() {
-  
+
+  //This relates to the 'Next Question' button
+  const swiperRef = useRef(null);
+
+  const goToNextSlide = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+ 
 
   //Relates to the quiz questions
   const [questionSet, setQuestionSet] = useState([]);
 
   //Incase the game takes time to load this will display 'Loading..'
   const [isLoading, setIsLoading] = useState(true);
+
 
   //Function to fetch the questions stored in the API called question-api.
   //Used ane except statement incase thier is an error fetching questions. 
@@ -54,14 +66,17 @@ function QuizSlider() {
     return <div>Loading...</div>;
   }
 
+
+
   //Return statement
   return (
-    <div className="container">
-      <h1 className="heading">Welcome to the Quiz</h1>
+    <div className="quiz_slider_container">
+      <h1 className="quiz_slider_heading">Welcome to the Quiz</h1>
 
       {/* I've used the Swiper Library to help create the slider feature */}
       <Swiper
       /*Behavour of the slider */
+        ref={swiperRef}
         effect={'coverflow'} //Slide transition
         grabCursor={true} //Cursor when hover **Might want to remove this when finished.
         centeredSlides={true} //Current slide in the center
@@ -85,7 +100,7 @@ function QuizSlider() {
     // Slide 1, question at index[0]
     <SwiperSlide key={index}>
       <div className="question_container">
-        <div className="border-container">
+        <div className="border_container">
           <p className="question_text">{questionSet[0].text}</p>
           </div>
         </div>
@@ -96,6 +111,9 @@ function QuizSlider() {
   {/* ***** Continues to display all the slides without having to code 10 SwiperSlides ***** */}
 
       </Swiper>
+
+      {/*This button triggers the function to move the slider to next question.*/}
+      <button className="primary_button" onClick = {goToNextSlide}>Next Question</button>
     </div>
     
       
