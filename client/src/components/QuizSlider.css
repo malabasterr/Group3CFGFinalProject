@@ -8,10 +8,10 @@ Some styles for the component come from the Swiper Library which is in the QuizS
 
 
 /*This html tag seems to decide the size of the slider. ** This might affect other pages.** */
-html {
+/* html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-} 
+}  */
 
 
 /*The outermost container*/
