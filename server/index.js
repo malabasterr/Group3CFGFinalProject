@@ -1,12 +1,16 @@
 const express = require('express');
-const app = express();
-
+const cors = require('cors');
 const dotenv = require("dotenv");
-const { createServer } = require("http");
+const { createServer, get } = require("http");
 const { Server } = require("socket.io");
 const roomHandler = require("./game/roomHandler");
+const { getQuestions } = require('./question-api/question-api')
 
+const app = express();
 dotenv.config();
+
+//Included cors so my API could communicate with my react component. 
+app.use(cors());
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
@@ -15,6 +19,7 @@ const io = new Server(httpServer, {
 
 const rooms = [];
 
+// Game Socket API
 io.on("connection", (socket) => {
   console.log("connected", socket.id);
   roomHandler(io, socket, rooms);
@@ -23,6 +28,14 @@ io.on("connection", (socket) => {
     console.log("disconnected", socket.id);
   });
 });
+
+// Meg Question API 
+// API route to get a set of shuffled questions
+app.get('/api/questions/random', async (req, res) => {
+  const questionSet = await getQuestions();
+  res.json({ questions: questionSet });
+});
+
 
 const port = process.env.PORT || 1234;
 httpServer.listen(port, () => console.log(`Listening on port ${port}`));

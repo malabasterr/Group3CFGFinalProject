@@ -47,7 +47,7 @@ function QuizSlider() {
 
   async function fetchQuestionSet() {
     try {
-      const response = await axios.get('http://localhost:3001/api/questions/random');
+      const response = await axios.get('http://localhost:3000/api/questions/random');
       //The next line of code is storing the JSON in the setQuestionSet variable.
       setQuestionSet(response.data.questions);
       setIsLoading(false);
@@ -101,7 +101,7 @@ function QuizSlider() {
     <SwiperSlide key={index}>
       <div className="question_container">
         <div className="border_container">
-          <p className="question_text">{questionSet[0].text}</p>
+          <p className="question_text">{questionSet[index].text}</p>
           </div>
         </div>
       
