@@ -21,9 +21,9 @@
   
 .starContainer {
   position: absolute;
-  top: 15%;
-  left: 3%;
-  width: 50%;
+  bottom: -5%;
+  left: 28%;
+  width: 45%;
 }
   
 .star {
@@ -61,25 +61,28 @@
 /* Styles for Controls component  */
 
 .controlsContainer {
-	width: 80%;
+	width: 40%;
 	display: flex;
 	justify-content: center;
 	margin: auto;
-  margin-top: 5%;
+  bottom: 0%;
 }
 
 .optionButton {
-	width: 30%;
+	width: 45%;
 	border: 3px solid black;
 	border-radius: 10px;
-	background-color:rgba(254, 194, 0, 1);
+	background-color:rgba(255, 255, 255);
 	overflow: hidden;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-  padding: 2%;
-  margin: 9%;
+  padding: 1%;
+  margin: 6%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 15%;
   flex-direction: column;
 }
 
@@ -104,9 +107,8 @@
 }
 
 .optionButtonImg {
-	width: 100%;
+	width: 60%;
 	margin: auto;
-  margin: 5%;
 }
 
 .playerName {
@@ -137,4 +139,8 @@
   color: white;
   margin: 8px 0;
   padding: 50%;
+}
+
+.newQuestionButton {
+  
 }

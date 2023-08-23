@@ -7,6 +7,7 @@ import match from "./images/match.png";
 import noMatch from "./images/noMatch.png";
 import "./game.css";
 import star from "./images/star.svg";
+import QuizSlider from "./QuizSlider/QuizSlider";
 
 const Room = () => {
   const [result, setResult] = useState({
@@ -99,6 +100,7 @@ const Room = () => {
   return (
     <div className="roomContainer">
       {player_2 && (
+
       <div className='starContainer'>
           {[...Array(10).keys()].map((ele, index) =>
             index + 1 <= finalScore ? (
@@ -118,7 +120,12 @@ const Room = () => {
       </div>
       )}
       <WaitingForConnection />
-      {player_2 && <Controls />}
+      {player_2 && (
+        <div>
+          <QuizSlider />
+          <Controls />
+        </div>
+      )}
       {resultText === "Match" && (
         <img src={match} alt="Match" className='match' />
       )}
