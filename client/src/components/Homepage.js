@@ -55,11 +55,11 @@ function Homepage() {
               
      
         <div className='howToPlay'>
-            <div class='container'>
-              <div class='row'>
-                <div class='col-sm-12'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-sm-12'>
                 <h2 className='subTitle'>How To Play</h2>
-                  <div class='box'>
+                  <div className='box'>
                  
                   <p className='paragraph2'>"It's Not You, It's Me" is an engaging online multiplayer game 
                 that connects two players for a fun and interactive quiz. The game 

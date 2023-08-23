@@ -5,12 +5,14 @@ const { createServer, get } = require("http");
 const { Server } = require("socket.io");
 const roomHandler = require("./game/roomHandler");
 const { getQuestions } = require('./question-api/question-api')
+const { findUser } = require('./login/loginDB'); 
 
 const app = express();
 dotenv.config();
 
 //Included cors so my API could communicate with my react component. 
 app.use(cors());
+app.use(express.json());
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
@@ -36,6 +38,36 @@ app.get('/api/questions/random', async (req, res) => {
   const questionSet = await getQuestions();
   res.json({ questions: questionSet });
 });
+
+// LOGIN LINKS
+app.post('/login', async (req, res) => {
+  try {
+      // Get values for username and password
+      console.log('LoginME!');
+      const username = req.body.username;
+      const password = req.body.password;
+
+      // This fetches the user from the database (or null if they dont't exist)
+      const user = await findUser(username, password);
+
+      if (user) {
+          // If we find the user - return their details
+          res.json({ success: true, message: 'Login successful', name:user.firstname + " " + user.lastname });
+      } else {
+          // No user - no access
+          res.status(400).json({ success: false, message: 'Invalid credentials' });
+      }
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ success: false, message: 'An error occurred' });
+  }
+});
+
+
+
+
+
+
 
 // // Defining the index and the max amount of questions. 
 // let lastQuestionIndex = 0;

@@ -2,6 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; //Bootstrap import
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';  // Import Provider
+import store from './redux/store.js';      // Import the Redux store
+
 import Homepage from './components/Homepage';
 import Error from './components/Error';
 import LoginSignup from './components/SigninLoginPage.js';
@@ -9,13 +12,15 @@ import HeaderComponent from './components/header/HeaderComponent.js';
 import FooterComponent from './components/footer/FooterComponent.js';
 import Room from './components/game/Room';
 import RoomHome from './components/game/RoomHome';
+import UsernameDisplay from './components/login/UsernameDisplay';
 
 
 function App() {
   return (
+    <Provider store={store}>
     <main>
       <HeaderComponent />
-
+      <UsernameDisplay />
       
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -29,7 +34,7 @@ function App() {
       <FooterComponent />
 
     </main>
-
+    </Provider>
   );
 };
 
