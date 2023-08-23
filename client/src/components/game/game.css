@@ -4,19 +4,21 @@
   background-color: rgb(187, 198, 255, 1);
   display: flex;
   justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
 .match {
   position: absolute;
   margin: auto;
   width: 50%;
+  z-index: 5;
 }
 
 .noMatch {
   position: absolute;
   margin: auto;
   width: 50%;
+  z-index: 5;
 }
   
 .starContainer {
@@ -42,6 +44,34 @@
 
 .purpleDragon {
   width: 20%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primaryButton {
+  background-color: #ffc100  ;
+  border-radius: 20px;
+  padding: 0.5%;
+  width: 10%;
+  margin-top: 1%;
+  position: absolute;
+  bottom: 12%;
+  right: 3%;
+}
+
+.secondaryButton {
+  background-color: rgba(240, 132, 94, 1);
+  border-radius: 20px;
+  padding: 0.5%;
+  width: 10%;
+  margin-top: 1%;
+  position: absolute;
+  bottom: 25%;
+  right: 10%;
 }
 
 /* Styles for Button component */
@@ -139,8 +169,4 @@
   color: white;
   margin: 8px 0;
   padding: 50%;
-}
-
-.newQuestionButton {
-  
 }
