@@ -7,7 +7,7 @@ Work out whether/how usernames can be shown on the cards rather than just 'Playe
 Add useful comments to the code
 
 
-Eveeryone to install:
+Everyone to install:
 
 npm install dotenv
 npm install socket.io

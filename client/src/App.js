@@ -7,8 +7,8 @@ import Error from './components/Error';
 import LoginSignup from './components/SigninLoginPage.js';
 import HeaderComponent from './components/header/HeaderComponent.js';
 import FooterComponent from './components/footer/FooterComponent.js';
-import QuizSlider from './components/QuizSlider';
-import './components/QuizSlider.css'
+import Room from './components/game/Room';
+import RoomHome from './components/game/RoomHome';
 
 
 function App() {
@@ -18,19 +18,16 @@ function App() {
 
       
       <Routes>
-        {/* <Route path="/" element={<Homepage />} /> */}
         <Route path="/" element={<Homepage />} />
         <Route path="/SigninLoginPage.js" element={<LoginSignup />} />
-        {/* This is not a real path, I am using it to test my features */}
-        {/* <Route path="/RoomHome" element={<RoomHome />} />
-        <Route path="/room/:id" element={<Room />} /> */}
-        {/* Routes to other pages will go here */}
+        {/* RoomHome is not a real path we will use at the end, I (Maddy) am using it to test my features */}
+        <Route path="/RoomHome" element={<RoomHome />} />
+        <Route path="/room/:id" element={<Room />} />
         <Route path="*" element={<Error />} />
       </Routes>
       
       <FooterComponent />
-     
-      <QuizSlider />
+
     </main>
 
   );
