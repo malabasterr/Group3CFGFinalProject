@@ -1,38 +1,11 @@
-@keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-  
-  .fade-out {
-    animation-name: fadeOut;
-    animation-timing-function: ease;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    background-image: url('./images/rainbowwelsh.png');
-    background-size: cover;
-    background-position: center;
-  }
-  
-/* 
-.translucent-bg {
-    background-image: url('path/to/your/image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(255, 255, 255, 0.5); /* white with 50% opacity */
-/* } */
-  
-  
+ 
   h1 {
     color: #bbc6ff;
     -webkit-text-stroke: 3px black;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     text-align: center;
-    font-size: 100px;
+    font-size: 700%;
     padding: 2%;
 }   
 
@@ -45,57 +18,54 @@
     padding: 1cm;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
-    color:#bbc6ff
+    color:#bbc6ff;
+    -webkit-text-stroke: 3px black;
+    text-align: center;
+    font-size: 350%;
+    padding: 2%;
 
 }
 
 .introBox {
-    background-color: #f8f5ff;
+    background: #f7e9f0 ;
+    border: #bbc6ff solid 2px;
     padding: 1cm 0cm 1cm 0cm;
     width: 100%;
     text-align: center;
-    border: 4px solid lightslategray;
     font-family: 'Open Sans', sans-serif;
 }
 
 .dragonPic {
     width: 100%;
-    display: flex;
     border-radius: 10px;
-    border: 3px solid black;
 }
 
 
 .background1 {
-    background-image: url('./images/rainbowwelsh.png');
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-bottom: 10%;
-    border: 4px solid lightslategray;
-    
+    background: linear-gradient(to bottom, rgba(255,255,255,0), white), 
+    linear-gradient(to right, #f79a4e, #d497bf);
+    padding: 3%;
 
 }
 
 .howToPlayTitle{
     text-align: center;
-    color: white;
+    color: black;
     padding: 30px;
 }
 
 .howToPlay{
-    text-align: center;
-    border: 4px solid lightslategray;
-    background-image: url('./images/rainbowwelsh.png');
-    color: white;
-    
+    background: 
+    linear-gradient(to top, rgba(255,255,255,0), white), 
+    linear-gradient(to right, #f79a4e, #d497bf);
+
 }
+
 .paragraph {
     text-align: center; 
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    padding: 0% 20%;
+    padding: 3% 15%;
 
 }
 
@@ -114,4 +84,19 @@
 
 .boxbottom {
    padding: 5%; 
+}
+
+.playButton {
+    background-color: #bbc6ff ;
+    border-radius: 15px;
+    border: 2px solid black;
+    box-shadow: 0px 5px 0px black;
+    padding: 10px;
+    margin: 60px auto;
+    width: 30rem;
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+.playButtonAlign {
+    text-align: center;
 }

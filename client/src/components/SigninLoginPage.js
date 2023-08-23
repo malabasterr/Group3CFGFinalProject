@@ -7,10 +7,10 @@ function LoginSignup() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-lg-6">
                     <Login />
                 </div>
-                <div className="col-md-6">
+                <div className="col-lg-6">
                     <SignUp />
                 </div>
             </div>

@@ -12,7 +12,7 @@ function ProcessBoxesComponent() {
         <div className="row">
           <div className="col-md-4">
             <div className='howto'>
-            <img src={loginImage} alt="Login" className='dragonPic'/>
+            <img src={greenDragon} alt="Login" className='dragonPic'/>
               <h6 className='boxText'>1. Login</h6>
               <p className='boxText'>Login to your personal account.</p>
             </div>
@@ -28,7 +28,7 @@ function ProcessBoxesComponent() {
   
           <div className="col-md-4">
             <div className='howto'>
-            <img src={dragonLogo} alt="Logodrag" className='dragonPic'/>
+            <img src={greenDragon} alt="Logodrag" className='dragonPic'/>
               <h6 className='boxText'>3. Quiz</h6>
               <p className='boxText'>Play and find out how well you know eachother.</p>
             </div>
