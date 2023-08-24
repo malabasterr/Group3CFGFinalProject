@@ -92,31 +92,3 @@
     height: 36rem;
   }
 }
-
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.primary_button {
-  background-color: #ffc100  ;
-  border-radius: 20px;
-  padding: 0.5%;
-  width: 10%;
-  margin-top: 1%;
-  position: absolute;
-  bottom: 12%;
-  right: 3%;
-}
-
-.secondary_button {
-  background-color: #ff00dd  ;
-  border-radius: 20px;
-  padding: 0.5%;
-  width: 10%;
-  margin-top: 1%;
-  position: absolute;
-  bottom: 12%;
-  right: 50%;
-}

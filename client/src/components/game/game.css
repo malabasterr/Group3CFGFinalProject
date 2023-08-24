@@ -4,19 +4,21 @@
   background-color: rgb(187, 198, 255, 1);
   display: flex;
   justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
 .match {
   position: absolute;
   margin: auto;
   width: 50%;
+  z-index: 5;
 }
 
 .noMatch {
   position: absolute;
   margin: auto;
   width: 50%;
+  z-index: 5;
 }
   
 .starContainer {
@@ -42,6 +44,34 @@
 
 .purpleDragon {
   width: 20%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primaryButton {
+  background-color: #ffc100  ;
+  border-radius: 20px;
+  padding: 0.5%;
+  width: 10%;
+  margin-top: 1%;
+  position: absolute;
+  bottom: 12%;
+  right: 3%;
+}
+
+.secondaryButton {
+  background-color: rgba(240, 132, 94, 1);
+  border-radius: 20px;
+  padding: 0.5%;
+  width: 10%;
+  margin-top: 1%;
+  position: absolute;
+  bottom: 25%;
+  right: 10%;
 }
 
 /* Styles for Button component */
@@ -141,6 +171,59 @@
   padding: 50%;
 }
 
-.newQuestionButton {
-  
+/* Styles for JoinLink component  */
+
+.join_link_container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 35px;
+}
+
+.copy_link {
+  background-color: white;
+  color: black;
+  font-size: 13px;
+  padding: 4px 14px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.copy_link::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  bottom: -4px;
+  z-index: -1;
+  left: calc(50% - 10px);
+  transform: rotate(45deg);
+}
+
+.join_link {
+  outline: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: var(--purple);
+  width: auto;
+}
+
+.join_link_active {
+  background-color: var(--green);
+}
+
+.join_link_text {
+  font-size: 18px;
+  color: white;
+  font-weight: normal;
+  margin: 10px 0 0 0;
 }

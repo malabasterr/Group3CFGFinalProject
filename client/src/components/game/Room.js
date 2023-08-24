@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext, useState, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { SocketContext } from "./SocketContext";
 import WaitingForConnection from "./WaitingForConnection";
@@ -8,6 +8,7 @@ import noMatch from "./images/noMatch.png";
 import "./game.css";
 import star from "./images/star.svg";
 import QuizSlider from "./QuizSlider/QuizSlider";
+import BackHome from "./BackHome";
 
 const Room = () => {
   const [result, setResult] = useState({
@@ -84,6 +85,8 @@ const Room = () => {
 
     setTimeout(() => {
       setResultText("");
+      setShowNextButton(true);
+      setShowControls(false);
     }, 1500);
 
     const updatedScore = [
@@ -96,6 +99,25 @@ const Room = () => {
   
     socket.emit("room:update", room);
   };
+
+  const swiperRef = useRef(null); 
+  const [showNextButton, setShowNextButton] = useState(false);
+
+  const handleNextButtonClick = () => {
+    setShowNextButton(false);
+    goToNextSlide();
+    setShowControls(true);
+    setCounter(counter + 1);
+  };
+
+  const goToNextSlide = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
+  const [showControls, setShowControls] = useState(true);
+  const [counter, setCounter] = useState(0); // Counter state
 
   return (
     <div className="roomContainer">
@@ -122,8 +144,18 @@ const Room = () => {
       <WaitingForConnection />
       {player_2 && (
         <div>
-          <QuizSlider />
+          <QuizSlider showNextButton={showNextButton} swiperRef={swiperRef}/>
+          {showNextButton && (
+            <div className="buttonContainer">
+              <button className="primaryButton" onClick={handleNextButtonClick}>
+              Next Question
+              </button>
+            </div>
+          )}
+          {showControls && (
           <Controls />
+          )}
+          {counter >= 9 && <BackHome />} {/* Render BackHome when counter is 10 or more */}
         </div>
       )}
       {resultText === "Match" && (
