@@ -1,9 +1,7 @@
 import React from 'react';
 import './displayBoxes.css';
-import dragonImage from '../images/Dragons.png';
-import loginImage from '../images/Loginimg.png';
 import greenDragon from '../images/BabyGreenDragon.jpg';
-import dragonLogo from '../images/Dragonlogo.png'
+
 
 
 function ProcessBoxesComponent() {

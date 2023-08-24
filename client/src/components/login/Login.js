@@ -1,18 +1,45 @@
+
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';  // Importing Redux's useDispatch hook
+import { setUsername } from '../../redux/actions';  // Ensure path is correct!
 import './Login.css';
+import axios from "axios";
 
 function Login() {
-  const [username, setUsername] = useState("");
+  const [usernameInput, setUsernameInput] = useState("");
   const [password, setPassword] = useState("");
 
+  const dispatch = useDispatch();  // This function lets us send actions to our Redux store
+  const navigate = useNavigate();
+
   const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+    setUsernameInput(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
+  const handleLogin = () => {
+    console.log("Login", usernameInput, password)
+    axios.post(
+      "http://localhost:1234/login", 
+      {
+        username: usernameInput,
+        password: password
+      })
+      .then(response => {
+        console.log(response.data);
+        // After a successful login, we set the username in our Redux store
+        dispatch(setUsername(`${response.data.name} (${usernameInput}) `));  // Here we dispatch the setUsername action
+        navigate('/RoomHome');
+      })
+      .catch(error => {
+        console.log(error);
+        navigate('/loginUnsuccessful');// add error for unsuccessful login
+      });
+  };
   const login = () => {};
   return (
     <div>
@@ -39,7 +66,7 @@ function Login() {
         </div>
 
         <div className="text-center">
-          <button className="mainbutton" onClick={login}>PLAY</button>
+          <button className="mainbutton" onClick={handleLogin}>PLAY</button>
         </div>
 
         <div className="text-center">
