@@ -11,7 +11,7 @@ const connectionConfig = {
 // Function to find a user by username and password
 const findUser = async (username, password) => {
   const connection = await mysql.createConnection(connectionConfig);
-  const [rows] = await connection.execute('SELECT * FROM Users WHERE username = ? AND password = ?', [username, password]);
+  const [rows] = await connection.execute('SELECT * FROM Users WHERE username = ?', [username]);
   await connection.end();
 
   if(rows.length == 0) {

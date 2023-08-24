@@ -7,6 +7,8 @@ const roomHandler = require("./game/roomHandler");
 // const { getQuestions } = require('./question-api/question-api')
 const { findUser } = require('./login/loginDB'); 
 const { getQuestionsFromDB } = require("./question-api/db");
+const { registerUser } = require('./registration/signupdb');
+const bcrypt = require("bcrypt");
 
 const app = express();
 dotenv.config();
@@ -92,11 +94,19 @@ app.post('/login', async (req, res) => {
       const password = req.body.password;
 
       // This fetches the user from the database (or null if they dont't exist)
-      const user = await findUser(username, password);
+      const user = await findUser(username);
+      
 
       if (user) {
           // If we find the user - return their details
-          res.json({ success: true, message: 'Login successful', name:user.firstname + " " + user.lastname });
+          if(bcrypt.compare(password, user.password)) {
+            res.json({ success: true, message: 'Login successful', name:user.firstname + " " + user.lastname });
+          } else {
+            res.status(400).json({ success: false, message: 'Invalid credentials' });
+          }
+
+
+         
       } else {
           // No user - no access
           res.status(400).json({ success: false, message: 'Invalid credentials' });
@@ -108,7 +118,22 @@ app.post('/login', async (req, res) => {
 });
 
 
+// SIGN UP STUFF
+app.post('/register', async (req, res) => {
+  const { firstname, lastname, username, password } = req.body;
 
+  if(!firstname || !lastname || !username || !password) {
+      return res.status(400).json({ success: false, message: 'Please provide all fields.' });
+  }
+
+  // hash the password
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  // SQL to insert the new user
+  await registerUser(firstname, lastname, username, hashedPassword);
+  
+  res.status(201).json({ success: true, message: 'User registered successfully.' });
+});
 
 
 
