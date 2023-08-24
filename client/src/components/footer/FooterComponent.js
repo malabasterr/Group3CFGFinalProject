@@ -4,7 +4,7 @@ import './FooterComponent.css';
 const FooterComponent = () => {
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="footerContainer">
         <span className="text-muted">It's not you! It's me! © 2023</span>
         <div className="social-media-icons">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">

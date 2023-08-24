@@ -4,26 +4,28 @@
   background-color: rgb(187, 198, 255, 1);
   display: flex;
   justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
 .match {
   position: absolute;
   margin: auto;
   width: 50%;
+  z-index: 5;
 }
 
 .noMatch {
   position: absolute;
   margin: auto;
   width: 50%;
+  z-index: 5;
 }
   
 .starContainer {
   position: absolute;
-  top: 15%;
-  left: 3%;
-  width: 50%;
+  bottom: -5%;
+  left: 28%;
+  width: 45%;
 }
   
 .star {
@@ -44,6 +46,34 @@
   width: 20%;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primaryButton {
+  background-color: #ffc100  ;
+  border-radius: 20px;
+  padding: 0.5%;
+  width: 10%;
+  margin-top: 1%;
+  position: absolute;
+  bottom: 12%;
+  right: 3%;
+}
+
+.secondaryButton {
+  background-color: rgba(240, 132, 94, 1);
+  border-radius: 20px;
+  padding: 0.5%;
+  width: 10%;
+  margin-top: 1%;
+  position: absolute;
+  bottom: 25%;
+  right: 10%;
+}
+
 /* Styles for Button component */
 
 .startButton {
@@ -61,25 +91,28 @@
 /* Styles for Controls component  */
 
 .controlsContainer {
-	width: 80%;
+	width: 40%;
 	display: flex;
 	justify-content: center;
 	margin: auto;
-  margin-top: 5%;
+  bottom: 0%;
 }
 
 .optionButton {
-	width: 30%;
+	width: 45%;
 	border: 3px solid black;
 	border-radius: 10px;
-	background-color:rgba(254, 194, 0, 1);
+	background-color:rgba(255, 255, 255);
 	overflow: hidden;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-  padding: 2%;
-  margin: 9%;
+  padding: 1%;
+  margin: 6%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 15%;
   flex-direction: column;
 }
 
@@ -104,9 +137,8 @@
 }
 
 .optionButtonImg {
-	width: 100%;
+	width: 60%;
 	margin: auto;
-  margin: 5%;
 }
 
 .playerName {

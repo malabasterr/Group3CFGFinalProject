@@ -2,7 +2,10 @@ import React from 'react';
 import Login from './login/Login'
 import ProcessBoxesComponent from './displayboxes/displayBoxes';
 import './Homepage.css';
-import dragonImage from './images/Dragons.png';
+import PurpleDragonImage from './images/PurpleDragon.png';
+import GreenDragonImage from './images/GreenDragon.png';
+import FlipCard from './FlipCard/FlipCard';
+
 
 function Homepage() {
 
@@ -15,7 +18,7 @@ function Homepage() {
         <div className='container'>
           <div className='row'>
             <div className='col-md-4'>
-                <img src={dragonImage} alt="Dragon" className='dragonPic'/>
+                <img src={PurpleDragonImage} alt="Dragon" className='dragonPic'/>
             </div>      
                 
             <div className="col-md-4"> 
@@ -23,7 +26,7 @@ function Homepage() {
             </div>
                       
             <div className="col-md-4">
-              <img src={dragonImage} alt="Dragon" className='dragonPic'/>
+              <img src={GreenDragonImage} alt="Dragon" className='dragonPic'/>
             </div>  
            
           </div>
@@ -31,7 +34,7 @@ function Homepage() {
       </div>
 
             <div className='introBox'>
-                    <h2>ALL ABOUT US!</h2>
+                    <h2 className='subTitle'>ALL ABOUT US!</h2>
                     <p className='paragraph'>Welcome to It's not you, It's me! We are a band 
                     of excited developers who wanted to push find a new way for people to 
                     connect! 
@@ -43,13 +46,19 @@ function Homepage() {
                     with human emotion. Players can engage in friendly competitions, learn more 
                     about each other, and relive shared experiences, all through a user-friendly 
                     and engaging online interface.</p>
+
+                    <FlipCard />
                     </div>
+
+                
+                    
+              
      
         <div className='howToPlay'>
             <div class='container'>
               <div class='row'>
                 <div class='col-sm-12'>
-                <h2 className='howToPlayTitle'>How To Play</h2>
+                <h2 className='subTitle'>How To Play</h2>
                   <div class='box'>
                  
                   <p className='paragraph2'>"It's Not You, It's Me" is an engaging online multiplayer game 
@@ -70,8 +79,10 @@ function Homepage() {
             <div className='boxbottom'>
               <ProcessBoxesComponent></ProcessBoxesComponent>
             </div>
+            <div className='playButtonAlign'>
+              <button className="playButton">PLAY</button>
+            </div>
         </div>
-
     </div>
   );
 }
