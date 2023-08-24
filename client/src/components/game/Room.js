@@ -155,7 +155,7 @@ const Room = () => {
           {showControls && (
           <Controls />
           )}
-          {counter >= 10 && <BackHome />} {/* Render BackHome when counter is 10 or more */}
+          {counter >= 9 && <BackHome />} {/* Render BackHome when counter is 10 or more */}
         </div>
       )}
       {resultText === "Match" && (
