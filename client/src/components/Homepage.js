@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import Login from './login/Login'
 import ProcessBoxesComponent from './displayboxes/displayBoxes';
 import './Homepage.css';
@@ -51,15 +52,12 @@ function Homepage() {
                     </div>
 
                 
-                    
-              
-     
         <div className='howToPlay'>
-            <div class='container'>
-              <div class='row'>
-                <div class='col-sm-12'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-sm-12'>
                 <h2 className='subTitle'>How To Play</h2>
-                  <div class='box'>
+                  <div className='box'>
                  
                   <p className='paragraph2'>"It's Not You, It's Me" is an engaging online multiplayer game 
                 that connects two players for a fun and interactive quiz. The game 
@@ -80,7 +78,7 @@ function Homepage() {
               <ProcessBoxesComponent></ProcessBoxesComponent>
             </div>
             <div className='playButtonAlign'>
-              <button className="playButton">PLAY</button>
+              <Nav.Link href="/SigninLoginPage.js" className='.navButton'><button className="playButton">LOGIN</button></Nav.Link>
             </div>
         </div>
     </div>
