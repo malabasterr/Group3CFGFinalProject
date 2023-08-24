@@ -1,5 +1,6 @@
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import '../header/HeaderComponent.css';
+// import logo from './ITNIT_Logo_.png';
 
 function HeaderComponent() {
   return (
@@ -7,7 +8,7 @@ function HeaderComponent() {
       <Container>
         <Row className="w-100">
           <Col xs={8} md={4}>
-            <Navbar.Brand href="#home">INYIM</Navbar.Brand>
+            {/* <Navbar.Brand href="#home"><img src={logo} alt="Dragon"></img></Navbar.Brand> */}
           </Col>
           <Col xs={4} md={8}>
             <Nav className="justify-content-end">
