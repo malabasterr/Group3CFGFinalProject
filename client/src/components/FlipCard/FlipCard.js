@@ -4,7 +4,7 @@ import rainbow from '../images/rainbowwelsh.png'; // sample path
 import eleri from './images/AvatarMaker.png';
 import maddy from './images/MadsMaker.png';
 import kudzai from './images/KudzaiMaker.png';
-// import megan from '';
+import megan from './images/MegMaker.png';
 import niki from './images/NikiAvatar.png';
 
 
@@ -57,7 +57,7 @@ function FlipCard({ children }) {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
-                                <img src={rainbow} alt="Kudzai"/>      
+                                <img src={megan} alt="Kudzai"/>      
                             </div>
                                 <div className="flip-card-back">
                                     <h6 className='namePadding'>Megan</h6>
