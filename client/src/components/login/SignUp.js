@@ -1,52 +1,51 @@
 import React, { useState } from 'react';
-import './SignUp.css';
+import axios from 'axios';
 
-function SignUp() {
-  const [user, setUser] = useState({ username: "", password: "" });
+const Signup = () => {
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    username: '',
+    password: ''
+  });
 
-  const handleUsernameChange = (event) => {
-    setUser({ ...user, username: event.target.value });
+  const handleChange = (e) => {
+    setFormData(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }));
   };
 
-  const handlePasswordChange = (event) => {
-    setUser({ ...user, password: event.target.value });
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const signUp = () => {};
+    try {
+      const response = await axios.post("http://localhost:1234/register", formData)
+
+      if (response.data.success) {
+        alert('Registration successful!');
+        // Redirect or perform other tasks
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert('Registration failed.');
+    }
+  };
 
   return (
-    <div className='d-flex justify-content-center align-items-start'>
-      <div className='signupBorder mt-3'>
-        <div className="text-center">
-              <div>
-                <label>Don't have an account?</label>
-              </div>
-              <div>
-                <label>Sign Up</label>
-              </div>
-        </div>
-
-        <div className="mb-3">
-              <input className="form-control"
-                placeholder="First Name"
-                onChange={handleUsernameChange}
-              />
-        </div>
-
-        <div>
-          <input className="form-control"
-            placeholder="Password"
-            onChange={handlePasswordChange}
-          />
-          
-        <div className="text-center">
-          <button className="signup-mainbutton" onClick={signUp}>Sign Up</button>
-        </div>
-        
-        </div>
-      </div>
+    <div>
+      <h2>Signup</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="firstname" placeholder="First Name" value={formData.firstname} onChange={handleChange} required />
+        <input type="text" name="lastname" placeholder="Last Name" value={formData.lastname} onChange={handleChange} required />
+        <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required />
+        <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+        <button type="submit">Signup</button>
+      </form>
     </div>
   );
-}
+};
 
-export default SignUp;
+export default Signup;
