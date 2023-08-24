@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import Login from './login/Login'
 import ProcessBoxesComponent from './displayboxes/displayBoxes';
 import './Homepage.css';
@@ -51,9 +52,6 @@ function Homepage() {
                     </div>
 
                 
-                    
-              
-     
         <div className='howToPlay'>
             <div className='container'>
               <div className='row'>
@@ -80,7 +78,7 @@ function Homepage() {
               <ProcessBoxesComponent></ProcessBoxesComponent>
             </div>
             <div className='playButtonAlign'>
-              <button className="playButton">PLAY</button>
+              <Nav.Link href="/SigninLoginPage.js" className='.navButton'><button className="playButton">LOGIN</button></Nav.Link>
             </div>
         </div>
     </div>
