@@ -5,9 +5,9 @@ function RoomHome() {
   return (
     <div>
     <UsernameDisplay />
-    
     <div>
-        <Button name="Play with stranger" type="stranger" />
+        {/* <Button name="Play with stranger" type="stranger" /> */}
+        <Button name="play with friend" type="friend" />
     </div>
     </div>
   )
