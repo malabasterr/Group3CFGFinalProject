@@ -27,8 +27,8 @@
 }
 
 .introBox {
-    background: #f7e9f0 ;
-    border: #bbc6ff solid 2px;
+    background: white ;
+    border: lightslategray solid 3px;
     padding: 1cm 0cm 1cm 0cm;
     width: 100%;
     text-align: center;

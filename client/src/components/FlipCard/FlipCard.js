@@ -1,6 +1,14 @@
 import React from 'react';
 import './FlipCard.css';
 import rainbow from '../images/rainbowwelsh.png'; // sample path
+import eleri from './images/AvatarMaker.png';
+import maddy from './images/MadsMaker.png';
+import kudzai from './images/KudzaiMaker.png';
+// import megan from '';
+import niki from './images/NikiAvatar.png';
+
+
+
 
 function FlipCard({ children }) {
     return (
@@ -10,11 +18,11 @@ function FlipCard({ children }) {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
-                                <img src={rainbow} alt="Kudzai" className='Kudzai' />      
+                                <img src={maddy} alt="Kudzai" />      
                             </div>
                                 <div className="flip-card-back">
                                     <h6 className='namePadding'>Maddy</h6>
-                                    <p>She loves to Sing!</p>
+                                    <p>Game Creator!</p>
                                 </div>
                         </div>
                     </div>
@@ -23,11 +31,11 @@ function FlipCard({ children }) {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
-                                <img src={rainbow} alt="Kudzai" className='Kudzai' />      
+                                <img src={kudzai} alt="Kudzai" />      
                             </div>
                                 <div className="flip-card-back">
                                     <h6 className='namePadding'>Kudzai</h6>
-                                    <p>Login to your personal account.</p>
+                                    <p>The Database Darling</p>
                                 </div>
                         </div>
                     </div>
@@ -36,11 +44,11 @@ function FlipCard({ children }) {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
-                                <img src={rainbow} alt="Kudzai" className='Kudzai' />      
+                                <img src={niki} alt="Kudzai" />      
                             </div>
                                 <div className="flip-card-back">
                                     <h6 className='namePadding'>Niki</h6>
-                                    <p>Login to your personal account.</p>
+                                    <p>The Login Legend!</p>
                                 </div>
                         </div>
                     </div>
@@ -49,11 +57,11 @@ function FlipCard({ children }) {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
-                                <img src={rainbow} alt="Kudzai" className='Kudzai' />      
+                                <img src={rainbow} alt="Kudzai"/>      
                             </div>
                                 <div className="flip-card-back">
                                     <h6 className='namePadding'>Megan</h6>
-                                    <p>Login to your personal account.</p>
+                                    <p>Carousel Queen</p>
                                 </div>
                         </div>
                     </div>
@@ -62,11 +70,11 @@ function FlipCard({ children }) {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
-                                <img src={rainbow} alt="Kudzai" className='Kudzai' />      
+                                <img src={eleri} alt="Eleri"/>      
                             </div>
                                 <div className="flip-card-back">
                                     <h6 className='namePadding'>Eleri</h6>
-                                    <p>Login to your personal account.</p>
+                                    <p>GitHub Merger Monster</p>
                                 </div>
                         </div>
                     </div>

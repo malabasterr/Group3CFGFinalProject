@@ -1,5 +1,5 @@
 .flip-card {
-    background-color: transparent;
+  background-color: transparent;
   width: 100%;
   max-width: 300px;
   height: 200px;
@@ -35,7 +35,7 @@
 }
 
 .flip-card-back {
-    background-color: #ffc001 ;
+  background-image: url("./rainbowwelsh.png");
   color: white;
   transform: rotateY(180deg);
 }
