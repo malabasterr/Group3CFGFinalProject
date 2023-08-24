@@ -1,34 +1,12 @@
-/*
-THE FILE
-This file contains the Quiz Slider component. It uses the library Swiper to create the slider feature for the quiz questions. 
-The Quiz Slider function calls upon the question-api to render the set of questions for the game. 
-Each question is display in a slide. 
-This file also contains the next question button that triggers the slider to move to the next question.
-*/
-
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { EffectCoverflow } from 'swiper/modules';
 import './QuizSlider.css';
-import { useNavigate } from 'react-router-dom';
 
-//Quiz Slider component.
-function QuizSlider() {
-
-  //This relates to the 'Next Question' button
-  const swiperRef = useRef(null);
-
-  const navigate = useNavigate();
-
-  const goToNextSlide = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext();
-    }
-  };
+function QuizSlider({ showNextButton, swiperRef }) {
 
   //Relates to the quiz questions
   const [questionSet, setQuestionSet] = useState([]);
@@ -53,18 +31,6 @@ function QuizSlider() {
     fetchQuestionSet();
   }, []);
 
-  const reshuffleQuestions = async () => {
-    try {
-      const response = await axios.get('http://localhost:1234/api/questions/reshuffle');
-      setQuestionSet(response.data.questions);
-      console.log('Question set reshuffled:', response.data.questions);
-    } catch (error) {
-      console.error('Error reshuffling question set:', error);
-    }
-    navigate('/');
-  };
-
-  //Return statement
   return (
     <div className='questionContainer'>
       <div className="quiz_slider_container">
@@ -109,14 +75,6 @@ function QuizSlider() {
         {/* ***** Continues to display all the slides without having to code 10 SwiperSlides ***** */}
 
         </Swiper>
-
-        {/*This button triggers the function to move the slider to next question.*/}
-        <div className='buttonContainer'>
-          <button className="primary_button" onClick = {goToNextSlide}>Next Question</button>
-        </div>
-        <div className='buttonContainer'>
-          <button className="secondary_button" onClick={reshuffleQuestions}>Reshuffle Questions</button>
-        </div>
       </div>
 
     </div>    
@@ -124,5 +82,3 @@ function QuizSlider() {
 }
 
 export default QuizSlider;
-
-  
