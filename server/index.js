@@ -4,8 +4,9 @@ const dotenv = require("dotenv");
 const { createServer, get } = require("http");
 const { Server } = require("socket.io");
 const roomHandler = require("./game/roomHandler");
-const { getQuestions } = require('./question-api/question-api')
+// const { getQuestions } = require('./question-api/question-api')
 const { findUser } = require('./login/loginDB'); 
+const { getQuestionsFromDB } = require("./question-api/db");
 
 const app = express();
 dotenv.config();
@@ -32,12 +33,55 @@ io.on("connection", (socket) => {
   });
 });
 
+
+// Defining the index and the max amount of questions. 
+let lastQuestionIndex = 0;
+const maxQuestions = 10;
+let cacheQuestions = null;
+
+// Function that shuffles the questions array using the Fisher-Yates shuffle algorithm
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+
+app.post('/api/reset-cache', (req, res) => {
+  cacheQuestions = null;
+  res.status(204).send();
+});
+
+
+async function getQuestions() {
+  console.log("questions being fetched");
+  if (!cacheQuestions) {
+    let dbQuestions = await getQuestionsFromDB();
+    shuffleArray(dbQuestions);
+    cacheQuestions = dbQuestions.slice(0, maxQuestions);
+  }
+    //This is selecting the first 10 Questions in the shuffled array.
+    return cacheQuestions;
+}
+
 // Meg Question API 
 // API route to get a set of shuffled questions
 app.get('/api/questions/random', async (req, res) => {
   const questionSet = await getQuestions();
   res.json({ questions: questionSet });
 });
+
+
+
+
+
+
+
+
+
+
+
 
 // LOGIN LINKS
 app.post('/login', async (req, res) => {
