@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { SocketContext } from "./SocketContext";
-import greenDragon from "./images/greenDragon.avif";
-import purpleDragon from "./images/purpleDragon.png";
+import OrangeDragon from "./images/Dragon_Orange.png";
+import PurpleDragon from "./images/Dragon_Purple.png";
 import "./game.css";
 
 function Controls() {
@@ -24,6 +24,9 @@ function Controls() {
   };
 
   return (
+    <div className='container'>
+          <div className='row'>
+            <div className='col-md-12'>
     <div className='controlsContainer'>
       <button
         disabled={room.players[socket.id].optionLock}
@@ -36,8 +39,8 @@ function Controls() {
         value="green"
       >
         <img
-          src={greenDragon}
-          alt="green dragon"
+          src={PurpleDragon}
+          alt="Player One"
           className='optionButtonImg'
         />
         <p className="playerName">Player 1</p>
@@ -53,12 +56,15 @@ function Controls() {
         value="purple"
       >
         <img
-          src={purpleDragon}
-          alt="purple dragon"
+          src={OrangeDragon}
+          alt="Player Two"
           className='optionButtonImg'
         />
         <p className="playerName">Player 2</p>
       </button>
+    </div>
+    </div>
+    </div>
     </div>
   );
 }

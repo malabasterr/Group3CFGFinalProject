@@ -67,7 +67,7 @@ function Login() {
         </div>
 
         <div className="text-center">
-          <button className="mainbutton" onClick={handleLogin}>PLAY</button>
+          <button className="mainButton" onClick={handleLogin}>PLAY</button>
         </div>
 
         <div className="text-center">

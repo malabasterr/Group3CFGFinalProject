@@ -3,8 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { SocketContext } from "./SocketContext";
 import WaitingForConnection from "./WaitingForConnection";
 import Controls from "./Controls";
-import match from "./images/match.png";
-import noMatch from "./images/noMatch.png";
+import match from "./images/match_dragon.png";
+import noMatch from "./images/unmatch_dragon.png";
 import "./game.css";
 import star from "./images/star.svg";
 import QuizSlider from "./QuizSlider/QuizSlider";
@@ -87,7 +87,7 @@ const Room = () => {
       setResultText("");
       setShowNextButton(true);
       setShowControls(false);
-    }, 1500);
+    }, 3000);
 
     const updatedScore = [
       room.players[player_1].score + score[0],
@@ -121,43 +121,64 @@ const Room = () => {
 
   return (
     <div className="roomContainer">
-      {player_2 && (
-
-      <div className='starContainer'>
-          {[...Array(10).keys()].map((ele, index) =>
-            index + 1 <= finalScore ? (
-              <img
-                src={star}
-                alt="1 point star"
-                className='activeStar'
-              />
-            ) : (
-              <img 
-                src={star}
-                alt="Empty star"
-                className='star'
-              />
-            )
-          )}
-      </div>
-      )}
+      
       <WaitingForConnection />
+
       {player_2 && (
         <div>
+          
           <QuizSlider showNextButton={showNextButton} swiperRef={swiperRef}/>
           {showNextButton && (
             <div className="buttonContainer">
-              <button className="primaryButton" onClick={handleNextButtonClick}>
+              <div className='container'>
+              <div className='row'>
+                <div className='col-sm-12'>
+              <button className="nextQuestionButton" onClick={handleNextButtonClick}>
               Next Question
               </button>
             </div>
+            </div>
+            </div>
+            </div>
+           
+           
+          
           )}
           {showControls && (
           <Controls />
           )}
+          {player_2 && (
+            
+
+<div className='container'>
+              <div className='row'>
+                <div className='col-sm-12'>
+
+<div className='starContainer'>
+    {[...Array(10).keys()].map((ele, index) =>
+      index + 1 <= finalScore ? (
+        <img
+          src={star}
+          alt="1 point star"
+          className='activeStar'
+        />
+      ) : (
+        <img 
+          src={star}
+          alt="Empty star"
+          className='star'
+        />
+      )
+    )}
+</div>
+</div>
+</div>
+</div>
+)}
           {counter >= 9 && <BackHome />} {/* Render BackHome when counter is 10 or more */}
         </div>
       )}
+
       {resultText === "Match" && (
         <img src={match} alt="Match" className='match' />
       )}
@@ -165,6 +186,7 @@ const Room = () => {
         <img src={noMatch} alt="No Match" className='noMatch' />
       )}
     </div>
+  
   );
 };
 
