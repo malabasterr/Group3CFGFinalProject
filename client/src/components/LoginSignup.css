@@ -1,20 +1,5 @@
-.col-md-6 {
-    padding: 20px;
-    
-  }
-  
-  .login-container {
-    border: 1px solid #eee;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-
-  .signup-container {
-    border: 1px solid #eee;
-    background-color: #f0f8ff;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
+.loginSignupContainer{
+  padding: 10%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), white), 
+  linear-gradient(to right, #f79a4e, #d497bf);
+}

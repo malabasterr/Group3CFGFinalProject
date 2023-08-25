@@ -60,6 +60,7 @@ function Login() {
         <div className="mb-3">
           <input
             className="form-control"
+            type="password"
             placeholder="Password"
             onChange={handlePasswordChange}
           />

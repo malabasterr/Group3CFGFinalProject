@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './SignUp.css'
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -35,15 +36,21 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="firstname" placeholder="First Name" value={formData.firstname} onChange={handleChange} required />
-        <input type="text" name="lastname" placeholder="Last Name" value={formData.lastname} onChange={handleChange} required />
-        <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
-        <button type="submit">Signup</button>
-      </form>
+    <div className="d-flex justify-content-center align-items-start">
+      <div className="signupBorder mt-3" >
+        <div className="text-center">
+          <label className='LoginTitle'>Sign up</label>
+        
+          <form onSubmit={handleSubmit}>
+            
+            <div className='buttonSpacing'><input className='form-control' type="text" name="firstname" placeholder="First Name" value={formData.firstname} onChange={handleChange} required /></div>
+            <div className='buttonSpacing'><input className='form-control' type="text" name="lastname" placeholder="Last Name" value={formData.lastname} onChange={handleChange} required /></div>
+            <div className='buttonSpacing'><input className='form-control' type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required /></div>
+            <div className='buttonSpacing'><input className='form-control' type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required /></div>
+            <button className="mainbutton" type="submit">Sign-Up</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
