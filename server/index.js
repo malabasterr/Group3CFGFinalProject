@@ -51,6 +51,7 @@ function shuffleArray(array) {
 
 
 app.post('/api/reset-cache', (req, res) => {
+  console.log("setting cache to null");
   cacheQuestions = null;
   res.status(204).send();
 });
@@ -70,6 +71,7 @@ async function getQuestions() {
 // Meg Question API 
 // API route to get a set of shuffled questions
 app.get('/api/questions/random', async (req, res) => {
+  console.log("got questions");
   const questionSet = await getQuestions();
   res.json({ questions: questionSet });
 });

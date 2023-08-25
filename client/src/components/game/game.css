@@ -67,14 +67,17 @@
 }
 
 .secondaryButton {
-  background-color: rgba(240, 132, 94, 1);
-  border-radius: 20px;
-  padding: 0.5%;
-  width: 10%;
-  margin-top: 1%;
-  position: absolute;
-  bottom: 25%;
-  right: 10%;
+  display: flex;
+  justify-content: center;
+    background-color: #f79a4e ;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0px 5px 0px black;
+    padding: 5px;
+    margin: 60px auto;
+    width: 20rem;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
 /* Styles for Button component */
@@ -265,4 +268,54 @@
   font-weight: normal;
   margin: 10px 0 0 0;
   margin-bottom: 30px;
+}
+
+/* Styles for Results component  */
+
+.resultText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  color: rgb(0, 0, 0);
+}
+
+/* Styles for RoomHome component */
+
+.roomHomeBackground {
+  background: linear-gradient(to bottom, rgba(255,255,255,0), white), 
+    linear-gradient(to right, #f79a4e, #d497bf);
+  display: flex;
+  justify-content: center;
+}
+
+.usernameDisplay{
+  color: rgb(0, 0, 0);
+}
+
+/* Styles for results */
+
+.showResultButton {
+  display: flex;
+  justify-content: center;
+    background-color: #bbc6ff ;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0px 5px 0px black;
+    padding: 5px;
+    margin: 60px auto;
+    width: 20rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.resultText {
+  color: #ffc100;
+  -webkit-text-stroke: 2px black;
+  text-shadow: 0px 4px 0px black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  font-size: 400%;
+  margin-bottom: 2cm;
 }
