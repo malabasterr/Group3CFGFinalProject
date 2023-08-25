@@ -1,6 +1,5 @@
 import React from 'react';
 import './FlipCard.css';
-import rainbow from '../images/rainbowwelsh.png'; // sample path
 import eleri from './images/AvatarMaker.png';
 import maddy from './images/MadsMaker.png';
 import kudzai from './images/KudzaiMaker.png';
@@ -21,8 +20,8 @@ function FlipCard({ children }) {
                                 <img src={maddy} alt="Kudzai" />      
                             </div>
                                 <div className="flip-card-back">
-                                    <h6 className='namePadding'>Maddy</h6>
-                                    <p>Game Creator!</p>
+                                    <h6 className="flip-card-header">Maddy</h6>
+                                    <p className="flip-card-subhead">Game Creator</p>
                                 </div>
                         </div>
                     </div>
@@ -34,8 +33,8 @@ function FlipCard({ children }) {
                                 <img src={kudzai} alt="Kudzai" />      
                             </div>
                                 <div className="flip-card-back">
-                                    <h6 className='namePadding'>Kudzai</h6>
-                                    <p>The Database Darling</p>
+                                    <h6 className="flip-card-header">Kudzai</h6>
+                                    <p className="flip-card-subhead">The Database Darling</p>
                                 </div>
                         </div>
                     </div>
@@ -44,11 +43,11 @@ function FlipCard({ children }) {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
-                                <img src={niki} alt="Kudzai" />      
+                                <img src={niki} alt="Niki" />      
                             </div>
                                 <div className="flip-card-back">
-                                    <h6 className='namePadding'>Niki</h6>
-                                    <p>The Login Legend!</p>
+                                    <h6 className="flip-card-header">Niki</h6>
+                                    <p className="flip-card-subhead">The Login Legend</p>
                                 </div>
                         </div>
                     </div>
@@ -60,8 +59,8 @@ function FlipCard({ children }) {
                                 <img src={megan} alt="Kudzai"/>      
                             </div>
                                 <div className="flip-card-back">
-                                    <h6 className='namePadding'>Megan</h6>
-                                    <p>Carousel Queen</p>
+                                    <h6 className="flip-card-header">Megan</h6>
+                                    <p className="flip-card-subhead">Carousel Queen</p>
                                 </div>
                         </div>
                     </div>
@@ -73,8 +72,8 @@ function FlipCard({ children }) {
                                 <img src={eleri} alt="Eleri"/>      
                             </div>
                                 <div className="flip-card-back">
-                                    <h6 className='namePadding'>Eleri</h6>
-                                    <p>GitHub Merger Monster</p>
+                                    <h6 className="flip-card-header">Eleri</h6>
+                                    <p className="flip-card-subhead">GitHub Merger Monster</p>
                                 </div>
                         </div>
                     </div>

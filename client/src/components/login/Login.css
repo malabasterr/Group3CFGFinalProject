@@ -3,7 +3,7 @@
     border-radius: 15px;
     border: 2px solid black;
     box-shadow: 0px 5px 0px black;
-    padding: 20px;
+    padding: 40px 20px;
     border-radius: 30px;
     font-family: 'Open Sans', sans-serif;
     background-color: white;
@@ -11,27 +11,42 @@
 
 .underButton{
     border-style: none;
-    padding: 20px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
+    background-color: white;
+    margin-top: 20px;
 }
 
-.mainbutton {
+.mainButton {
     background-color: #bbc6ff ;
-    border-radius: 20px;
-    padding: 10px;
-    margin-top: 10px;
-    width: 80%;
+    border-radius: 15px;
+    border: 2px solid black;
+    box-shadow: 0px 5px 0px black;
+    padding: 5px;
+    margin: 20px auto;
+    width: 100%;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
+    font-weight: 400;
+    font-size: 1.5rem;
+
 }
-.loginBox{
+
+.loginBox {
     background-color: white;
 }
 
 .LoginTitle {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    font-size: large;
-    padding-bottom: 15px;
+    font-size: 1.8rem;
+    padding-bottom: 40px;
+}
+
+.form-control {
+    background-color: #F8F5FF;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }

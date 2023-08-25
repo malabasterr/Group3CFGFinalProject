@@ -1,19 +1,35 @@
-.navButton {
-    border: 2px solid black ;
-    border-radius: 20px;
-    width: 100%;
+.logo {
+    width: 75px;
+    height: 75px;
 }
 
+.navButton {
+    font-size: 1.2rem;
+    color: black;
+    margin-right: 20px;
+
+
+}
+
+
 .signupButton {
-    background-color: #ffc100;
+    background-color: #FEC200;
     border: 2px solid black ;
+    box-shadow: 0 5px 0 black;
     border-radius: 20px;
+    width: 12%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
 .background {
     background-color: #f8f5ff;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
+
+    
 }
 .social-media-icons  {
     color: #ffc100 ;
