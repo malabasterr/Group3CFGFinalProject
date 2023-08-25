@@ -19,6 +19,8 @@ function App() {
   return (
     <Provider store={store}>
     <main>
+    <div className="app-container">
+
       <HeaderComponent />
       <UsernameDisplay />
       
@@ -32,8 +34,10 @@ function App() {
       </Routes>
       
       <FooterComponent />
+      </div>
 
     </main>
+    
     </Provider>
   );
 };

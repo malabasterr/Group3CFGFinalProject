@@ -4,12 +4,23 @@
     border-radius: 20px;
     padding: 10%;
     height: 100%;
-    box-shadow: 0.2cm 0.1cm 0 black;
-    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0 10px 0 black;
+    background-color:#ffffff;
+}
+
+
+.boxHeading {
+    font-size: 1.8rem;
+    margin: 20px 0;
+
 }
 
 .boxText {
     color: black;
     font-family: 'Open Sans', sans-serif;
-    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 400px;
 }

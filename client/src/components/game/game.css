@@ -1,66 +1,69 @@
 /* Styles for Room component */
 
 .roomContainer {
-  background-color: rgb(187, 198, 255, 1);
+      background: linear-gradient(to bottom, rgba(255,255,255,0), white), 
+    linear-gradient(to right, #f79a4e, #d497bf);
   display: flex;
   justify-content: center;
-  height: 100vh;
 }
+
 
 .match {
   position: absolute;
+  bottom: 5%;
   margin: auto;
-  width: 50%;
+  max-width: 40%;
+  height: auto;
   z-index: 5;
+  border-radius: 20px;
+  border: 2px solid black;
 }
 
 .noMatch {
   position: absolute;
+  bottom: 5%;
   margin: auto;
-  width: 50%;
+  max-width: 40%;
+  height: auto;
   z-index: 5;
+  border-radius: 20px;
+  border: 2px solid black
 }
   
 .starContainer {
-  position: absolute;
   bottom: -5%;
   left: 28%;
-  width: 45%;
+  width: 35%;
+  align-items: center;
+  justify-content: center;
+  background-color: #dee2f6;
+  margin: 0 auto 60px;
+  padding: 15px;
+  border-radius: 20px;
+  border: 1px solid black;
 }
   
 .star {
   filter: invert(1);
   width: 10%;
+
 }
   
 .activeStar {
-  filter: invert(0.2) sepia(100%) saturate(10) hue-rotate(200deg) !important;
+  filter: invert(0.6) sepia(3) saturate(5) hue-rotate(8deg) brightness(1.1) !important;
   width: 10%;
 }
 
-.greenDragon {
-  width: 20%;
-}
 
-.purpleDragon {
-  width: 20%;
-}
-
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.primaryButton {
+.nextQuestionButton {
   background-color: #ffc100  ;
   border-radius: 20px;
-  padding: 0.5%;
-  width: 10%;
-  margin-top: 1%;
-  position: absolute;
-  bottom: 12%;
-  right: 3%;
+  border: 2px solid black;
+  box-shadow: 0px 5px 0px black;
+  font-family: 'Open Sans', sans-serif;
+  padding: 1% 2%;
+  display: flex;
+  margin: 0 auto 60px;
 }
 
 .secondaryButton {
@@ -77,56 +80,71 @@
 /* Styles for Button component */
 
 .startButton {
-  background-color: gray;
-	border: 3px solid black;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+    background-color: #bbc6ff ;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0px 5px 0px black;
+    padding: 5px;
+    margin: 60px auto;
+    width: 20rem;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
 .startButton:hover {
-  background-color: white;
-	border: 3px solid black;
+  background-color: #9ba9ef;
   cursor: pointer;
 }
 
 /* Styles for Controls component  */
 
 .controlsContainer {
-	width: 40%;
+	width: 50%;
 	display: flex;
 	justify-content: center;
 	margin: auto;
   bottom: 0%;
+
 }
 
 .optionButton {
 	width: 45%;
-	border: 3px solid black;
-	border-radius: 10px;
-	background-color:rgba(255, 255, 255);
+	border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 0 10px 0 black;
+  background-color: #bbc6ff;
+  padding: 60px;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-  padding: 1%;
+  padding: 2%;
   margin: 6%;
   margin-left: 8%;
   margin-right: 8%;
   margin-bottom: 15%;
   flex-direction: column;
+  color: black;
 }
 
 .optionButton:hover {
-	scale: 1.2;
+	scale: 1.1;
 }
 
-.optionButtonActive {
+
+.optionButton:Active {
   scale: 1.2;
-	width: 30%;
-	border: 3px solid white;
-	border-radius: 10px;
-	background-color:rgba(37, 111, 198, 1);
-	overflow: hidden;
+	width: 45%;
+	border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 0 10px 0 black;
+  background-color: #97a2da;
+  padding: 60px;
+	cursor: pointer;
+  overflow: hidden;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -134,15 +152,21 @@
   padding: 2%;
   margin: 9%;
   flex-direction: column;
-}
+ 
+} 
+
 
 .optionButtonImg {
-	width: 60%;
-	margin: auto;
+	background-color: #ffffff;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 100%;
+
 }
 
 .playerName {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
   font-size: large;
   margin-top: 8%;
 }
@@ -151,9 +175,10 @@
 
 .playerContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   flex-wrap: nowrap;
+  height: 60vh;
 }
 
 .opponentContainer {
@@ -161,34 +186,46 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
   
 .connectionText {
-  font-size: 18px;
-  color: white;
-  margin: 8px 0;
-  padding: 50%;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  margin: 0 auto 60px;
+
 }
 
 /* Styles for JoinLink component  */
 
 .join_link_container {
-  position: absolute;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  top: 35px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 0 10px 0 black;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 20px;
+
+  
 }
 
 .copy_link {
-  background-color: white;
+  background-color: #bbc6ff;
   color: black;
-  font-size: 13px;
-  padding: 4px 14px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 0 2px 0 black;
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -196,7 +233,7 @@
   content: "";
   width: 20px;
   height: 20px;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   position: absolute;
   bottom: -4px;
   z-index: -1;
@@ -206,13 +243,13 @@
 
 .join_link {
   outline: none;
-  border: 2px solid white;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
   cursor: pointer;
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 600;
-  color: white;
+  color: rgb(0, 0, 0);
   background-color: var(--purple);
   width: auto;
 }
@@ -222,8 +259,10 @@
 }
 
 .join_link_text {
-  font-size: 18px;
-  color: white;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: rgb(0, 0, 0);
   font-weight: normal;
   margin: 10px 0 0 0;
+  margin-bottom: 30px;
 }

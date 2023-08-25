@@ -3,9 +3,11 @@
   width: 100%;
   max-width: 300px;
   height: 200px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px; 
   padding: 2%;
+  
+  
+  
 }
 
 .flip-card-inner {
@@ -15,6 +17,8 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+
+    
 }
 
 .flip-card:hover .flip-card-inner {
@@ -30,18 +34,36 @@
 }
 
 .flip-card-front {
-    background-color: #bbb;
   color: black;
 }
 
 .flip-card-back {
-  background-image: url("./rainbowwelsh.png");
-  color: white;
+  background-color: #bbc6ff;
+  color: rgb(25, 25, 25);
   transform: rotateY(180deg);
+  border-radius: 20px;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .flip-card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px;
+}
+
+.flip-card-header {
+  font-size: 1.8rem;
+  font-weight: 600;
+
+}
+
+.flip-card-subhead {
+  font-size: 1.4rem;
+
 }
