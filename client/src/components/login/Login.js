@@ -74,7 +74,6 @@ function Login() {
 
         <div className="text-center">
           <button className="underButton" onClick={login}>Forgot Password</button>
-          <button className="underButton" onClick={LoginSignup}>Create Account</button>
           
         </div>
       </div>
