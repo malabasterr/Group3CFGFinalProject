@@ -22,7 +22,6 @@ function App() {
     <div className="app-container">
 
       <HeaderComponent />
-      <UsernameDisplay />
       
       <Routes>
         <Route path="/" element={<Homepage />} />
