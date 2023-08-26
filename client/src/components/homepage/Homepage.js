@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
-import Login from './login/Login'
-import ProcessBoxesComponent from './displayboxes/displayBoxes';
+import { Nav } from 'react-bootstrap';
+import Login from '../login/Login'
+import ProcessBoxesComponent from '../displayBoxes/DisplayBoxes';
 import './Homepage.css';
-import PurpleDragonImage from './images/Dragon_Purple.png';
-import OrangeDragonImage from './images/Dragon_Orange.png';
-import FlipCard from './FlipCard/FlipCard';
+import PurpleDragonImage from '../images/Dragon_Purple.png';
+import OrangeDragonImage from '../images/Dragon_Orange.png';
+import FlipCard from '../flipCard/FlipCard';
 
 
 function Homepage() {

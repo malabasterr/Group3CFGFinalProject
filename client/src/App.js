@@ -4,9 +4,9 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';  // Import Provider
 import store from './redux/store.js';      // Import the Redux store
-import Homepage from './components/Homepage';
+import Homepage from './components/homepage/Homepage';
 import Error from './components/Error';
-import LoginSignup from './components/SigninLoginPage.js';
+import LoginSignup from './components/loginSignup/LoginSignup.js';
 import HeaderComponent from './components/header/HeaderComponent.js';
 import FooterComponent from './components/footer/FooterComponent.js';
 import GameRoom from './components/game/GameRoom';

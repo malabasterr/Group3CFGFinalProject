@@ -5,7 +5,6 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { EffectCoverflow } from 'swiper/modules';
 import './QuizSlider.css';
-import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 
 
 function QuizSlider({ showNextButton, swiperRef }) {
@@ -64,16 +63,16 @@ function QuizSlider({ showNextButton, swiperRef }) {
           // Slide 1, question at index[0]
           <SwiperSlide key={index}>
               <div className='container'>
-          <div className='row'>
-            <div className='col-md-3'>
-          <div className="question-container">
-            <div className="borderContainer">
-              <p className="questionText">{questionSet[index].text}</p>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
+                <div className='row'>
+                  <div className='col-md-3'>
+                    <div className="question_container">
+                      <div className="border_container">
+                        <p className="question_text">{questionSet[index].text}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
           </SwiperSlide>
         ))}

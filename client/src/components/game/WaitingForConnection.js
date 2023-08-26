@@ -14,7 +14,7 @@ const WaitingForConnection = () => {
         <JoinLink
           link={`localhost:3000/room/${room.roomId}`}
         />
-      )};
+      )}
       {!player_2 && (
         <div className='waitingForOpponentContainer'>
           <p className='connectionText'>waiting for opponent connection...</p>

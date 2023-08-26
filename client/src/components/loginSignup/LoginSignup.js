@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from './login/Login';
-import SignUp from './login/SignUp';
+import Login from '../login/Login';
+import SignUp from '../login/SignUp';
 import './LoginSignup.css';
 
 function LoginSignup() {
