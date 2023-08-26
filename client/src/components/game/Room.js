@@ -8,7 +8,7 @@ import noMatch from "./images/unmatch_dragon.png";
 import "./game.css";
 import star from "./images/star.svg";
 import QuizSlider from "./QuizSlider/QuizSlider";
-import BackHome from "./BackHome";
+import Results from "./Results";
 
 const Room = () => {
   const [result, setResult] = useState({
@@ -87,6 +87,7 @@ const Room = () => {
       setResultText("");
       setShowNextButton(true);
       setShowControls(false);
+      setCounter(counter + 1);
     }, 3000);
 
     const updatedScore = [
@@ -107,7 +108,7 @@ const Room = () => {
     setShowNextButton(false);
     goToNextSlide();
     setShowControls(true);
-    setCounter(counter + 1);
+    // setCounter(counter + 1);
   };
 
   const goToNextSlide = () => {
@@ -123,71 +124,77 @@ const Room = () => {
     <div className="roomContainer">
       
       <WaitingForConnection />
-
+  
       {player_2 && (
         <div>
-          
-          <QuizSlider showNextButton={showNextButton} swiperRef={swiperRef}/>
-          {showNextButton && (
-            <div className="buttonContainer">
-              <div className='container'>
-              <div className='row'>
-                <div className='col-sm-12'>
-              <button className="nextQuestionButton" onClick={handleNextButtonClick}>
-              Next Question
-              </button>
-            </div>
-            </div>
-            </div>
-            </div>
-           
-           
-          
+        
+          {counter < 10 && (
+            <>
+              <QuizSlider showNextButton={showNextButton} swiperRef={swiperRef} />
+              {showNextButton && (
+                <div className="buttonContainer">
+                  <div className='container'>
+                    <div className='row'>
+                      <div className='col-sm-12'>
+                        <button className="nextQuestionButton" onClick={handleNextButtonClick}>
+                         Next Question
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+  
+              {showControls && (
+                <Controls />
+              )}
+  
+              {player_2 && (
+                <div className='container'>
+                 <div className='row'>
+                    <div className='col-sm-12'>
+                      <div className='starContainer'>
+                        {[...Array(10).keys()].map((ele, index) =>
+                          index + 1 <= finalScore ? (
+                            <img
+                              key={index}
+                              src={star}
+                              alt="1 point star"
+                              className='activeStar'
+                            />
+                          ) : (
+                            <img 
+                              key={index}
+                              src={star}
+                              alt="Empty star"
+                              className='star'
+                            />
+                          )
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </>
           )}
-          {showControls && (
-          <Controls />
+  
+          {counter >= 10 && (
+            <div className="resultsContainer">
+              <Results finalScore={finalScore} />
+            </div>
           )}
-          {player_2 && (
-            
-
-<div className='container'>
-              <div className='row'>
-                <div className='col-sm-12'>
-
-<div className='starContainer'>
-    {[...Array(10).keys()].map((ele, index) =>
-      index + 1 <= finalScore ? (
-        <img
-          src={star}
-          alt="1 point star"
-          className='activeStar'
-        />
-      ) : (
-        <img 
-          src={star}
-          alt="Empty star"
-          className='star'
-        />
-      )
-    )}
-</div>
-</div>
-</div>
-</div>
-)}
-          {counter >= 9 && <BackHome />} {/* Render BackHome when counter is 10 or more */}
+  
+          {resultText === "Match" && (
+            <img src={match} alt="Match" className='match' />
+          )}
+          {resultText === "No Match" && (
+            <img src={noMatch} alt="No Match" className='noMatch' />
+          )}
         </div>
       )}
-
-      {resultText === "Match" && (
-        <img src={match} alt="Match" className='match' />
-      )}
-      {resultText === "No Match" && (
-        <img src={noMatch} alt="No Match" className='noMatch' />
-      )}
     </div>
-  
-  );
+  );  
 };
 
 export default Room;

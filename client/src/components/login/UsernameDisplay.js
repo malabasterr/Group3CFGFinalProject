@@ -8,7 +8,7 @@ function HomePage() {
   return (
     <div>
       {username ? (
-        <h2>{username}!</h2>
+        <h2>Welcome, {username}!</h2>
       ) : (
         <h2></h2>
       )}
