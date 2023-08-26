@@ -22,11 +22,12 @@
     border: 2px solid black ;
     box-shadow: 0 5px 0 black;
     border-radius: 15px;
-    width: 12%;
+    width: auto;
     text-align: center;
     font-size: 1rem;
     margin-bottom: 5px;
     transition: background-color 0.3s ease;
+    padding: 0.7em;
 }
 
 .specialnavButton:hover {
