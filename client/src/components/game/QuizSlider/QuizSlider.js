@@ -7,35 +7,34 @@ import { EffectCoverflow } from 'swiper/modules';
 import './QuizSlider.css';
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 
+
 function QuizSlider({ showNextButton, swiperRef }) {
 
-  //Relates to the quiz questions
+
   const [questionSet, setQuestionSet] = useState([]);
 
-  //Function to fetch the questions stored in the API called question-api.
+  //Function to fetch the questions stored in the Database.
   //Used an except statement in case there is an error fetching questions. 
   async function fetchQuestionSet() {
     try {
       const response = await axios.get('http://localhost:1234/api/questions/random');
-      //The next line of code is storing the JSON in the setQuestionSet variable.
       setQuestionSet(response.data.questions);
       console.log('Question set from non-socket API:', questionSet)
-      // setIsLoading(false);
 
     } catch (error) {
       console.error('Error fetching question set:', error);
     }
   }
 
-  //Calling upon the questions from the API.
+  //Calling upon the questions from the Database.
   useEffect(() => {
     fetchQuestionSet();
   }, []);
 
   return (
     <div className='questionContainer'>
-      <div className="quiz_slider_container">
-        <h1 className="quiz_slider_heading">It's Not You, It's Me</h1>
+      <div className="quizSliderContainer">
+        <h1 className="quizSliderHeading">It's Not You, It's Me</h1>
 
         {/* I've used the Swiper Library to help create the slider feature */}
         <Swiper
@@ -53,7 +52,7 @@ function QuizSlider({ showNextButton, swiperRef }) {
             modifier: 2.5,
           }}
           modules={[EffectCoverflow]}//These are the modules used to create the coverflow effect.
-          className="swiper_container"//The class name for the slider
+          className="swiperContainer"//The class name for the slider
           allowTouchMove={false} // Disable dragging behavior
         >
 
@@ -67,9 +66,9 @@ function QuizSlider({ showNextButton, swiperRef }) {
               <div className='container'>
           <div className='row'>
             <div className='col-md-3'>
-          <div className="question_container">
-            <div className="border_container">
-              <p className="question_text">{questionSet[index].text}</p>
+          <div className="question-container">
+            <div className="borderContainer">
+              <p className="questionText">{questionSet[index].text}</p>
             </div>
           </div>
           </div>

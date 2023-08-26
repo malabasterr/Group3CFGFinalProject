@@ -10,17 +10,20 @@
   
   .footerContainer {
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
   
   .social-media-icons a {
+ 
     color: #333;
     margin: 0 10px;
     font-size: 20px;
     text-decoration: none;
+  
   }
   
   .social-media-icons i {
@@ -29,5 +32,12 @@
   
   .social-media-icons i:hover {
     color: #ffc100 ;
+  }
+
+  .textMuted {
+    margin-top: 30px;
+  }
+  .logo {
+    margin-bottom: 20px;
   }
   
