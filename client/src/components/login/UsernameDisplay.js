@@ -6,12 +6,14 @@ function HomePage() {
   const username = useSelector(state => state.username);
 
   return (
-    <div>
-      {username ? (
-        <h2>Welcome, {username}!</h2>
-      ) : (
-        <h2></h2>
-      )}
+    <div className='container'>
+          <div>
+            {username ? (
+              <h2>Welcome, {username}!</h2>
+            ) : (
+              <h2></h2>
+            )}
+          </div>
     </div>
   );
 }

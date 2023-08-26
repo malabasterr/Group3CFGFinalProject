@@ -1,5 +1,5 @@
 import React from 'react';
-import './displayBoxes.css';
+import './DisplayBoxes.css';
 import DragonPairImage from '../images/Dragon_Pair.png';
 import PurpleDragonImage from '../images/Dragon_Purple.png';
 import OrangeDragonImage from '../images/Dragon_Orange.png';
