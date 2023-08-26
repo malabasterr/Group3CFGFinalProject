@@ -13,19 +13,20 @@ function ProcessBoxesComponent() {
           <div className="col-md-3">
             <div className='howto'>
               <div className="howToBorder">
-            <img src={PurpleDragonImage} alt="Purple Dragon" className='dragonPic'/>
-            </div>
+                <img src={PurpleDragonImage} alt="Purple Dragon" className='dragonPic'/>
+              </div>
+              
               <h6 className='boxHeading'>1. Login</h6>
               <p className='boxText'>Login or create an account. Choose a username and password.</p>
             
-          </div>
+            </div>
           </div>
   
           <div className="col-md-3">
 
             <div className='howto'>
             <div className="howToBorder">
-            <img src={DragonPairImage} alt="Dragon Friends" className='dragonPic'/>
+              <img src={DragonPairImage} alt="Dragon Friends" className='dragonPic'/>
             </div>
               <h6 className='boxHeading'>2. Link to friend</h6>
               <p className='boxText'>After clicking Start Game, copy the link and send to your friend to get started!</p>
@@ -34,11 +35,11 @@ function ProcessBoxesComponent() {
   
           <div className="col-md-3">
             <div className='howto'>
-            <div className="howToBorder">
-            <img src={OrangeDragonImage} alt="Orange Dragon" className='dragonPic'/>
-            </div>
-              <h6 className='boxHeading'>3. Quiz</h6>
-              <p className='boxText'>Answer a set of 10 Questions. Each matched answer gets you a point!</p>
+              <div className="howToBorder">
+                <img src={OrangeDragonImage} alt="Orange Dragon" className='dragonPic'/>
+              </div>
+                <h6 className='boxHeading'>3. Quiz</h6>
+                <p className='boxText'>Answer a set of 10 Questions. Each matched answer gets you a point!</p>
             </div>
           </div>
         </div>
