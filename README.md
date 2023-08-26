@@ -23,13 +23,13 @@ The key server file is index.js
 1. Clone the repository to your local machine.
 2. Install dependencies using `npm install`.
 3. Open a new terminal and navigate to the server folder: 
-    'cd server' to navigate to the server folder
-    'nodemon index.js' to run the server
+    `cd server` to navigate to the server folder
+    `nodemon index.js` to run the server
 4. Open a new terminal and navigate to the client folder: 
-    'cd client' to navigate to the client folder
-    'npm start' to launch the browser
+    `cd client` to navigate to the client folder
+    `npm start` to launch the browser
 5. When you’re finished, stop the development server:
-    Open both terminals and type 'ctrl + C' for windows or 'cmd + C' for Mac
+    Open both terminals and type `ctrl + C` for windows or `cmd + C` for Mac
     When it says  “Terminate batch job (Y/N)?" you can type Y and press enter.”
 
 ### How to Play
