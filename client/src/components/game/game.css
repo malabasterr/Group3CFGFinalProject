@@ -5,26 +5,31 @@
     linear-gradient(to right, #f79a4e, #d497bf);
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .match {
   position: absolute;
-  bottom: 5%;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto; 
   max-width: 40%;
   height: auto;
-  z-index: 5;
+  z-index: 10;
   border-radius: 20px;
   border: 2px solid black;
 }
 
 .noMatch {
   position: absolute;
-  bottom: 5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: auto;
   max-width: 40%;
   height: auto;
-  z-index: 5;
+  z-index: 10;
   border-radius: 20px;
   border: 2px solid black
 }
@@ -54,7 +59,9 @@
 
 
 .nextQuestionButton {
-  background-color: #ffc100  ;
+  color: white;
+  text-shadow: 0.2px 0.2px 0px rgb(255, 255, 255);
+  background-color: #f57e26;
   border-radius: 20px;
   border: 2px solid black;
   box-shadow: 0px 5px 0px black;
@@ -62,23 +69,23 @@
   padding: 1% 2%;
   display: flex;
   margin: 0 auto 60px;
+  transition: background-color 0.3s ease;
 }
 
-.backHomeButton {
-  display: flex;
-  justify-content: center;
-    background-color: #f79a4e ;
-    border-radius: 20px;
-    border: 2px solid black;
-    box-shadow: 0px 5px 0px black;
-    padding: 5px;
-    margin: 60px auto;
-    width: 20rem;
-    font-size: 1.8rem;
-    cursor: pointer;
+.nextQuestionButton:hover {
+  background-color:  #e36a0e;
 }
 
-/* Styles for StartGameButton component */
+.nextQuestionButton:active {
+  background-color: #e36a0e;
+  border: 2px solid black;
+  box-shadow: none;
+  transform: translateY(3px);
+  transition: transform 0.4s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
+/* Styles for Button component */
 
 .startGameButton {
   display: flex;
@@ -92,12 +99,22 @@
     width: 20rem;
     font-size: 1.8rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .startButton:hover {
-  background-color: #9ba9ef;
-  cursor: pointer;
+  background-color: rgb(161, 175, 247);
 }
+
+.startButton:active {
+  background-color: rgb(161, 175, 247);
+  border: 2px solid black;
+  box-shadow: none;
+  transform: translateY(3px);
+  transition: transform 0.4s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
 
 /* Styles for Controls component  */
 
@@ -128,31 +145,12 @@
   margin-bottom: 15%;
   flex-direction: column;
   color: black;
+  transition: transform 0.2s ease;
 }
 
-.optionButton:hover {
-	scale: 1.1;
+.optionButton:active:hover {
+    transform: translateY(-15px);
 }
-
-.optionButton:Active {
-  scale: 1.2;
-	width: 45%;
-	border: 2px solid black;
-  border-radius: 20px;
-  box-shadow: 0 10px 0 black;
-  background-color: #97a2da;
-  padding: 60px;
-	cursor: pointer;
-  overflow: hidden;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-  padding: 2%;
-  margin: 9%;
-  flex-direction: column;
-} 
-
 
 .optionButtonImg {
 	background-color: #ffffff;
@@ -221,6 +219,12 @@
   box-shadow: 0 2px 0 black;
   margin-bottom: 30px;
   position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.copyLink:hover {
+  background-color: rgb(161, 175, 247);
+  cursor: pointer;
 }
 
 .copyLink::after {
@@ -261,15 +265,6 @@
   margin-bottom: 30px;
 }
 
-/* Styles for Results component  */
-
-.resultText{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: larger;
-  color: rgb(0, 0, 0);
-}
 
 /* Styles for GameHome component */
 
@@ -300,13 +295,88 @@
     cursor: pointer;
 }
 
-.resultText {
-  color: #ffc100;
-  -webkit-text-stroke: 2px black;
-  text-shadow: 0px 4px 0px black;
+.resultWrapper {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid black;
+  box-shadow: 0px 5px 0px black;
+  padding: 1%;
+  
+
+}
+
+.resultWrapperBorder {
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 5%;
+
+}
+
+.result {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.resultHeader {
+  color:  #f79a4e;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 0px 3px 0px black;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   text-align: center;
   font-size: 400%;
-  margin-bottom: 2cm;
+}
+
+.resultText {
+  color:  #f79a4e;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 0px 3px 0px black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  font-size: 400%;
+
+
+}
+
+.backHomeButton {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0.2px 0.2px 0px rgb(255, 255, 255);
+  letter-spacing: 1px;
+  background-color: #f57e26;
+  border: 2px solid black ;
+  box-shadow: 0 5px 0 black;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.backHomeButton:hover {
+  color: white;
+  background-color: #e36a0e;
+  transition: background-color 0.3s ease;
+}
+
+.backHomeButton:active {
+  color: white;
+  background-color:  #e36a0e;
+  border: 2px solid black;
+  box-shadow: none;
+  transition: box-shadow 0.1s ease-in-out;
 }

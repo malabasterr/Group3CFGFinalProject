@@ -12,11 +12,9 @@ function HeaderComponent() {
           </Col>
           <Col xs={4} md={8}>
             <Nav className="justify-content-end align-items-center">
-              <Nav.Link href="/" className='navButton'>Home</Nav.Link>
-              <Nav.Link href="/SigninLoginPage.js" className='navButton'>Login</Nav.Link>
-              <div className='signupButton'>
-              <Nav.Link href="/SigninLoginPage.js">SIGN UP</Nav.Link>
-              </div>
+              <Nav.Link href="/" className='navButton'>HOME</Nav.Link>
+              <Nav.Link href="/SigninLoginPage.js" className='navButton'>LOGIN</Nav.Link>
+              <Nav.Link href="/SigninLoginPage.js" className="specialnavButton">SIGN UP</Nav.Link>
             </Nav>
           </Col>
         </Row>

@@ -7,30 +7,49 @@
     font-size: 1.2rem;
     color: black;
     margin-right: 20px;
-
-
 }
 
+.navButton:hover {
+    text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0);
+}
 
-.signupButton {
-    background-color: #FEC200;
+.specialnavButton {
+    color: white;
+    text-shadow: 0.5px 0.5px 0px rgb(255, 255, 255);
+    letter-spacing: 1px;
+    background-color: #f57e26;
     border: 2px solid black ;
     box-shadow: 0 5px 0 black;
-    border-radius: 20px;
-    width: 12%;
+    border-radius: 15px;
+    width: auto;
     text-align: center;
-    font-weight: 600;
     font-size: 1rem;
     margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+    padding: 0.7em;
 }
 
+.specialnavButton:hover {
+    color: white;
+    background-color: #e36a0e;
+    transition: background-color 0.3s ease;
+}
+
+  .specialnavButton:active {
+    color: white;
+    background-color:  #e36a0e;
+    border: 2px solid black;
+    box-shadow: none;
+    transform: translateY(3px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
+  }
+  
 .background {
-    background-color: #f8f5ff;
+    background-color: #f7f5ff;
     width: 100%;
-    font-family: 'Open Sans', sans-serif;
-
-    
+    font-family: 'Open Sans', sans-serif;  
 }
+
 .social-media-icons  {
     color: #ffc100 ;
   }

@@ -141,7 +141,7 @@ const GameRoom = () => {
                     <div className='row'>
                       <div className='col-sm-12'>
                         <button className="nextQuestionButton" onClick={handleNextButtonClick}>
-                          Next Question
+                         NEXT QUESTION
                         </button>
                       </div>
                     </div>

@@ -6,8 +6,8 @@ import './LoginSignup.css';
 function LoginSignup() {
     return (
         <div className='loginSignupContainer'>
-            <div className="container">
-                <div className="row">
+            <div className="d-flex justify-content-center align-items-center">
+                <div className="row flex-fill">
                     <div className="col-lg-6">
                         <Login />
                     </div>

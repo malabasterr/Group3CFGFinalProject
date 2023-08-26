@@ -44,7 +44,7 @@ function Login() {
   return (
     <div>
     <div className="d-flex justify-content-center align-items-start">
-      <div className="signupBorder mt-3" >
+      <div className="signupBorder flex-fill" >
         <div className="text-center">
           <label className='LoginTitle'>Log in to Play!</label>
         </div>
