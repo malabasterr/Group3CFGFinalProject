@@ -40,7 +40,7 @@ function Homepage() {
               <div className='row'>
                 <div className='col-sm-12'>
                     <h2 className='subTitle'>About Us</h2>
-                    <p className='paragraph'>Welcome to "It's not you, It's me!" Join us in transforming digital game nights and making lasting connections. Prepare to laugh, remember, and demonstrate your understanding of your dear ones – all with a simple click. In a world where staying linked matters greatly, our game brings people closer, entertainingly testing their mutual knowledge.</p>
+                    <p className='paragraph'>Welcome to "It's not you, It's me!" We're a team of five passionate women from the Code First Girls degree program. Join us in transforming digital game nights and making lasting connections. Prepare to laugh, remember, and demonstrate your understanding of your dear ones – all with a simple click. In a world where staying linked matters greatly, our game brings people closer.</p>
 
                     <FlipCard />
                     </div>
@@ -65,8 +65,8 @@ function Homepage() {
             <div className='boxbottom'>
               <ProcessBoxesComponent></ProcessBoxesComponent>
             </div>
-            <div className='playButtonAlign'>
-              <Nav.Link href="/SigninLoginPage.js" className='.navButton'><button className="playButton">LOGIN</button></Nav.Link>
+            <div className='loginButtonAlign'>
+              <Nav.Link href="/SigninLoginPage.js" className='.navButton'><button className="loginButton">LOGIN</button></Nav.Link>
             </div>
         </div>
     </div>

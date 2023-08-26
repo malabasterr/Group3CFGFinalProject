@@ -1,5 +1,6 @@
 .loginSignupContainer{
-  padding: 10%;
+  padding: 10% 20%;
   background: linear-gradient(to bottom, rgba(255,255,255,0), white), 
   linear-gradient(to right, #f79a4e, #d497bf);
+  
 }

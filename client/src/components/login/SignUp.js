@@ -36,9 +36,13 @@ const Signup = () => {
   };
 
   return (
+    
     <div className="d-flex justify-content-center align-items-start">
-      <div className="signupBorder mt-3" >
+  
+      <div className="signupBorder flex-fill" >
+      
         <div className="text-center">
+          
           <label className='LoginTitle'>Sign up</label>
         
           <form onSubmit={handleSubmit}>
@@ -47,11 +51,12 @@ const Signup = () => {
             <div className='buttonSpacing'><input className='form-control' type="text" name="lastname" placeholder="Last Name" value={formData.lastname} onChange={handleChange} required /></div>
             <div className='buttonSpacing'><input className='form-control' type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required /></div>
             <div className='buttonSpacing'><input className='form-control' type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required /></div>
-            <button className="mainbutton" type="submit">Sign-Up</button>
+            <button className="signUpButton" type="submit">SIGN UP</button>
           </form>
         </div>
       </div>
     </div>
+
   );
 };
 
