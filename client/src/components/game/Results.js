@@ -4,9 +4,9 @@ import BackHome from './BackHome';
 
 
 const Results = (props) => {
-
     const [showResult, setShowResult] = useState(false);
 
+    // Function to show the final result
     const handleShowResultButtonClick = () => {
         setShowResult(true);
     };
@@ -32,4 +32,3 @@ const Results = (props) => {
 }
 
 export default Results;
-

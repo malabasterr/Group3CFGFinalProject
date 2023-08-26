@@ -10,7 +10,9 @@ import star from "./images/star.svg";
 import QuizSlider from "./QuizSlider/QuizSlider";
 import Results from "./Results";
 
-const Room = () => {
+const GameRoom = () => {
+
+  // State and context variables
   const [result, setResult] = useState({
     rotate: 0,
     show: false,
@@ -22,18 +24,24 @@ const Room = () => {
   const location = useLocation();
   const [finalScore, setFinalScore] = useState(0);
   const [roundsPlayed, setRoundsPlayed] = useState(0);
+  const swiperRef = useRef(null); 
+  const [showNextButton, setShowNextButton] = useState(false);
+  const [showControls, setShowControls] = useState(true);
+  const [counter, setCounter] = useState(0);
 
+  // UseEffect to join the room when the component mounts
   useEffect(() => {
     let roomId = location.pathname.split("/")[2];
     let size = Object.keys(socket).length;
 
     if (size > 0) {
-      socket.emit("room:join", { roomId }, (err, room) => {
+      socket.emit("room:join", { roomId }, (err) => {
         if (err) navigate("/");
       });
     }
   }, [location.pathname, navigate, socket]);
 
+  // UseEffect to calculate results and update game state
   useEffect(() => {
     const calculateResults = async () => {
       const players = room?.players;
@@ -42,6 +50,8 @@ const Room = () => {
         players[player_1]?.optionLock === true &&
         players[player_2]?.optionLock === true
       ) {
+        
+        // Validate and update scores based on player options
         let result = { score: [1, 1], text: "Match" };
         if (players[player_1].option !== players[player_2].option) {
           result = validateOptions(
@@ -49,37 +59,39 @@ const Room = () => {
           );
         }
 
+        // Update player scores, result display, and emit room update
         room.players[player_1].score += result.score[0];
         room.players[player_2].score += result.score[1];
-
         matchOrNoMatch(result.text, result.score);
-
         room.players[player_1].optionLock = false;
         room.players[player_2].optionLock = false;
 
         socket.emit("room:update", room);
-
         setRoundsPlayed(roundsPlayed + 1);
       }
     };
+
     calculateResults();
+
   }, [room, socket, player_1, player_2, roundsPlayed]);
 
+  // Check the selected option and update scores
   const validateOptions = (value) => {
     switch (value) {
-      case "green purple":
+      case "purple orange":
         return { score: [0, 0], text: "No Match" };
-      case "purple green":
+      case "orange purple":
         return { score: [0, 0], text: "No Match" };
-      case "purple purple":
+      case "orange orange":
         return { score: [1, 1], text: "Match" };
-      case "green green":
+      case "purple purple":
           return { score: [1, 1], text: "Match" };
       default:
         return { score: [0, 0], text: "No Match" };
     }
   };
 
+  // After option buttons are selected, scores updates and states changed
   const matchOrNoMatch = (text, score) => {
     setResultText(text);
 
@@ -101,33 +113,25 @@ const Room = () => {
     socket.emit("room:update", room);
   };
 
-  const swiperRef = useRef(null); 
-  const [showNextButton, setShowNextButton] = useState(false);
-
+  // Handle next question button click
   const handleNextButtonClick = () => {
     setShowNextButton(false);
     goToNextSlide();
     setShowControls(true);
-    // setCounter(counter + 1);
   };
 
+  // Go to the next slide in the swiper
   const goToNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideNext();
     }
   };
 
-  const [showControls, setShowControls] = useState(true);
-  const [counter, setCounter] = useState(0); // Counter state
-
   return (
     <div className="roomContainer">
-      
       <WaitingForConnection />
-  
       {player_2 && (
         <div>
-        
           {counter < 10 && (
             <>
               <QuizSlider showNextButton={showNextButton} swiperRef={swiperRef} />
@@ -144,18 +148,16 @@ const Room = () => {
                   </div>
                 </div>
               )}
-  
               {showControls && (
                 <Controls />
               )}
-  
               {player_2 && (
                 <div className='container'>
                  <div className='row'>
                     <div className='col-sm-12'>
                       <div className='starContainer'>
                         {[...Array(10).keys()].map((ele, index) =>
-                          index + 1 <= finalScore ? (
+                          index + 1 <= counter ? (
                             <img
                               key={index}
                               src={star}
@@ -178,13 +180,11 @@ const Room = () => {
               )}
             </>
           )}
-  
           {counter >= 10 && (
             <div className="resultsContainer">
               <Results finalScore={finalScore} />
             </div>
           )}
-  
           {resultText === "Match" && (
             <img src={match} alt="Match" className='match' />
           )}
@@ -197,4 +197,4 @@ const Room = () => {
   );  
 };
 
-export default Room;
+export default GameRoom;

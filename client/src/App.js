@@ -4,38 +4,30 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';  // Import Provider
 import store from './redux/store.js';      // Import the Redux store
-
 import Homepage from './components/Homepage';
 import Error from './components/Error';
 import LoginSignup from './components/SigninLoginPage.js';
 import HeaderComponent from './components/header/HeaderComponent.js';
 import FooterComponent from './components/footer/FooterComponent.js';
-import Room from './components/game/Room';
-import RoomHome from './components/game/RoomHome';
-
+import GameRoom from './components/game/GameRoom';
+import GameHome from './components/game/GameHome';
 
 function App() {
   return (
     <Provider store={store}>
-    <main>
-    <div className="app-container">
-
-      <HeaderComponent />
-      
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/SigninLoginPage.js" element={<LoginSignup />} />
-        {/* RoomHome is not a real path we will use at the end, I (Maddy) am using it to test my features */}
-        <Route path="/RoomHome" element={<RoomHome />} />
-        <Route path="/room/:id" element={<Room />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      
-      <FooterComponent />
-      </div>
-
-    </main>
-    
+      <main>
+        <div className="app-container">
+          <HeaderComponent />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/SigninLoginPage.js" element={<LoginSignup />} />
+            <Route path="/RoomHome" element={<GameHome />} />
+            <Route path="/room/:id" element={<GameRoom />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <FooterComponent />
+        </div>
+      </main>
     </Provider>
   );
 };

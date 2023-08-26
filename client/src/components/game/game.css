@@ -1,4 +1,4 @@
-/* Styles for Room component */
+/* Styles for GameRoom component */
 
 .roomContainer {
       background: linear-gradient(to bottom, rgba(255,255,255,0), white), 
@@ -7,7 +7,6 @@
   justify-content: center;
   position: relative;
 }
-
 
 .match {
   position: absolute;
@@ -51,7 +50,6 @@
 .star {
   filter: invert(1);
   width: 10%;
-
 }
   
 .activeStar {
@@ -89,7 +87,7 @@
 
 /* Styles for Button component */
 
-.startButton {
+.startGameButton {
   display: flex;
   justify-content: center;
     background-color: #bbc6ff ;
@@ -126,7 +124,6 @@
 	justify-content: center;
 	margin: auto;
   bottom: 0%;
-
 }
 
 .optionButton {
@@ -155,14 +152,11 @@
     transform: translateY(-15px);
 }
 
-
-
 .optionButtonImg {
 	background-color: #ffffff;
     border: 2px solid black;
     border-radius: 20px;
     width: 100%;
-
 }
 
 .playerName {
@@ -174,7 +168,7 @@
 
 /* Styles for Waiting for Connection component */
 
-.playerContainer {
+.waitingContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -182,7 +176,7 @@
   height: 60vh;
 }
 
-.opponentContainer {
+.waitingForOpponentContainer {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -194,12 +188,11 @@
   font-size: 1.2rem;
   color: rgb(0, 0, 0);
   margin: 0 auto 60px;
-
 }
 
 /* Styles for JoinLink component  */
 
-.join_link_container {
+.joinLinkContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -214,11 +207,9 @@
   margin-top: auto;
   margin-bottom: auto;
   padding: 20px;
-
-  
 }
 
-.copy_link {
+.copyLink {
   background-color: #bbc6ff;
   color: black;
   font-size: 1rem;
@@ -231,14 +222,12 @@
   transition: background-color 0.3s ease;
 }
 
-.copy_link:hover {
+.copyLink:hover {
   background-color: rgb(161, 175, 247);
   cursor: pointer;
 }
 
-
-
-.copy_link::after {
+.copyLink::after {
   content: "";
   width: 20px;
   height: 20px;
@@ -250,7 +239,7 @@
   transform: rotate(45deg);
 }
 
-.join_link {
+.joinLink {
   outline: none;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
@@ -263,11 +252,11 @@
   width: auto;
 }
 
-.join_link_active {
+.joinLinkActive {
   background-color: var(--green);
 }
 
-.join_link_text {
+.joinLinkText {
   font-size: 1.5rem;
   line-height: 1.5;
   color: rgb(0, 0, 0);
@@ -277,7 +266,7 @@
 }
 
 
-/* Styles for RoomHome component */
+/* Styles for GameHome component */
 
 .roomHomeBackground {
   background: linear-gradient(to bottom, rgba(255,255,255,0), white), 
@@ -290,8 +279,7 @@
   color: rgb(0, 0, 0);
 }
 
-
-/* Styles for results */
+/* Styles for Results component */
 
 .showResultButton {
   display: flex;

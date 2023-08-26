@@ -10,6 +10,7 @@ function BackHome() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    // Function to reshuffle questions and log out
     const reshuffleQuestions = async () => {
       await axios.post('/api/reset-cache');
       dispatch(logout());
@@ -17,7 +18,7 @@ function BackHome() {
   };
 
   return (
-    <button className="backHomeButton" onClick={reshuffleQuestions}>Back To Homepage</button>
+    <button className="backHomeButton" onClick={reshuffleQuestions}>Back to Homepage</button>
   )
 };
 
