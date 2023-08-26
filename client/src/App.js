@@ -12,7 +12,6 @@ import HeaderComponent from './components/header/HeaderComponent.js';
 import FooterComponent from './components/footer/FooterComponent.js';
 import Room from './components/game/Room';
 import RoomHome from './components/game/RoomHome';
-import UsernameDisplay from './components/login/UsernameDisplay';
 
 
 function App() {
