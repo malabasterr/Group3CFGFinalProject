@@ -3,15 +3,15 @@ import "./game.css";
 import BackHome from './BackHome';
 
 const Results = (props) => {
-
     const [showResult, setShowResult] = useState(false);
 
+    // Function to show the final result
     const handleShowResultButtonClick = () => {
         setShowResult(true);
     };
 
     return (
-        <div className='result'>
+        <div className='resultContainer'>
             {showResult ? (
                 <>
                     <p className='resultText'>Final Result = {props.finalScore}</p>
@@ -25,4 +25,3 @@ const Results = (props) => {
 }
 
 export default Results;
-
