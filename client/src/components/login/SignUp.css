@@ -1,7 +1,10 @@
 .signupBorder {
     border: 3px rgb(0, 0, 0) solid;
-    padding: 20px;
+    padding: 40px 20px;
     border-radius: 30px;
+}
+.test {
+    background-color:  #bbc6ff;
 }
 
 .underButton{
@@ -10,13 +13,36 @@
  padding: 20px;
 }
 
-.signup-mainbutton {
-    background-color: #ffc100  ;
-    border-radius: 20px;
-    padding: 10px;
-    margin-top: 10px;
-    width: 80%;
+.signUpButton {
+    color: white;
+    text-shadow: 0.2px 0.2px 0px rgb(255, 255, 255);
+    letter-spacing: 1px;
+    background-color: #f57e26;
+    border: 2px solid black ;
+    box-shadow: 0 5px 0 black;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 20px auto;
+    padding: 5px;
+    transition: background-color 0.3s ease;
 }
+
+.signUpButton:hover {
+    color: white;
+    background-color: #e36a0e;
+    transition: background-color 0.3s ease;
+}
+
+  .signUpButton:active {
+    color: white;
+    background-color:  #e36a0e;
+    border: 2px solid black;
+    box-shadow: none;
+    transform: translateY(3px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
+  }
 
 .buttonSpacing {
  padding: 5px;

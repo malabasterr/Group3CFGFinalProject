@@ -17,7 +17,7 @@ function BackHome() {
   };
 
   return (
-    <button className="secondaryButton" onClick={reshuffleQuestions}>Back to Homepage</button>
+    <button className="backHomeButton" onClick={reshuffleQuestions}>Back To Homepage</button>
   )
 };
 
