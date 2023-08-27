@@ -21,7 +21,7 @@ function FlipCard({ children }) {
                             </div>
                                 <div className="flip-card-back">
                                     <h6 className="flip-card-header">Maddy</h6>
-                                    <p className="flip-card-subhead">Game Creator</p>
+                                    <p className="flip-card-subhead">Game Creator Guru</p>
                                 </div>
                         </div>
                     </div>
