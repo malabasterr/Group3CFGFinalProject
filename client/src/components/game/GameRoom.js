@@ -7,7 +7,7 @@ import match from "./images/match_dragon.png";
 import noMatch from "./images/unmatch_dragon.png";
 import "./game.css";
 import star from "./images/star.svg";
-import QuizSlider from "./QuizSlider/QuizSlider";
+import QuizSlider from "./quizSlider/QuizSlider";
 import Results from "./Results";
 
 const GameRoom = () => {
