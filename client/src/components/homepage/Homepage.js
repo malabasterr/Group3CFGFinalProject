@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import Login from '../login/Login'
-import ProcessBoxesComponent from '../DisplayBoxes/DisplayBoxes';
+import ProcessBoxesComponent from '../displayboxes/displayBoxes';
 import './Homepage.css';
 import PurpleDragonImage from '../images/Dragon_Purple.png';
 import OrangeDragonImage from '../images/Dragon_Orange.png';
