@@ -1,7 +1,7 @@
 import React from 'react'
 import StartGameButton from './StartGameButton'
 import UsernameDisplay from '../login/UsernameDisplay';
-import QuizSlider from './quizSlider/QuizSlider';
+import QuizSlider from './QuizSlider/QuizSlider';
 
 function GameHome() {
 
