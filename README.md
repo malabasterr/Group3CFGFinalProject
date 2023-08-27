@@ -26,6 +26,7 @@ The 'client' folder stores the frontend React code. The 'server' folder contains
 4. Open a new terminal and navigate to the client folder with 
     `cd client`. Then run the development server with
     `npm start`.
+
 When you’re finished, stop the development server. To do so, open both terminals and type `ctrl + C` for windows or `cmd + C` for Mac. If it says “Terminate batch job (Y/N)?" type Y and press enter.
 
 ### How to Play
@@ -35,7 +36,7 @@ When you’re finished, stop the development server. To do so, open both termina
 4. With the created username and password, Log in with the "Log in to Play" box.
 7. Click "Start Game".
 8. Share the provided link with a friend to invite them to play.
-9. Wait for your friend to join the game* *(*while the development server is running on localhost, a second player will need to be simulated by opening up a browser in incognito mode, and pasting the link into this to act as player 2's browser)*.
+9. Wait for your friend to join the game *(while the development server is running on localhost, a second player will need to be simulated by opening up a browser in incognito mode, and pasting the link into this to act as player 2's browser)*.
 10. Once both players are in the virtual 'room', the game will load.
 11. Select answers to 10 questions regarding each player's likelihood to perform certain actions.
 12. Earn a point for each matching response.
