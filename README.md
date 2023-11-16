@@ -2,6 +2,8 @@
 
 This project was created by Eleri, Maddy, Meg, Niki and Kudzai 
 
+https://github.com/malabasterr/Group3CFGFinalProject/assets/113557081/7fc03f2a-4bf8-4dd5-baf7-a9c9d24f68b2
+
 ## Table of Contents
 - Game Overview
 - Getting Started
